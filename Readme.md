@@ -176,7 +176,7 @@ percentage = .95;
 
 	
 * C++
-  
+  ```
 double angle; 
 int x, y;
 
@@ -185,11 +185,10 @@ cin >> angle;
 
 cout << “Enter x and y: “;
 cin >> x >> y; 
-
+```
 
 
 * python
-
 angle = int(input(“Enter an angle: “))
 x, y = int(input(“Enter x and y: “)).split()
 print(x,y)
