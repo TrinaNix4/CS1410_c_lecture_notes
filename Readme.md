@@ -135,44 +135,46 @@ const int MAX_VALUE = 256;
 
 # Variable Names 
 
-Preferred Variable Names
+- Preferred Variable Names
 
 string firstName = “Bob”;
 string firstName_ = “Bob”; 
 
 
-Valid Variable Names
-
+- Valid Variable Names
+```
 string first_Name = “Bob”;
 string _firstName = “Bob”;
+```
+- Invalid Variable Names
 
-Invalid Variable Names
-
-
+```
 string First Name = “Bob”;
 string 1Name = “Bob”;
 int if = 21; 
-
+ 
+ ```
 # C ++ Declare a variable
 
-Name and type together
+- Name and type together
 
-*C++
+* C++
 int numStudents = 42;
 char letter = ‘W’;
 double percentage = .95;
 
-*python
+* python
 numStudents = 42;
 letter = “W”;
 percentage = .95; 
 
 # User input
 
-Get input from user :cin statement
+- Get input from user :cin statement
 
 	
-		*C++
+		* C++
+  
 double angle; 
 int x, y;
 
@@ -184,27 +186,25 @@ cin >> x >> y;
 
 
 
-
-*python
+* python
 
 angle = int(input(“Enter an angle: “))
 x, y = int(input(“Enter x and y: “)).split()
 print(x,y)
 
-
 # Arithmetic Operators 
 
-Addition
-- 	subtraction
-		*	multiplication
-		/ 	division
-		% 	modulus (remainder)
-		Add to:   ++  (does not work in python) or +=
-		Subtract from: - - (does not work in python) or -= 
+- (+) Addition 
+- 	(-) subtraction
+-		(*)	multiplication
+-		/ 	division
+-		% 	modulus (remainder)
+-		Add to:   ++  (does not work in python) or +=
+-		Subtract from: - - (does not work in python) or -= 
 
 		E.g.   int xPos = 5;
 			xPos += 3;  so xPos = 8 
 
-		*same in python
+		* same in python
 		xPos = 5;
 		xPos
