@@ -158,7 +158,7 @@ int if = 21;
 
 - Name and type together
 
-* C++
+C++
 int numStudents = 42;
 char letter = ‘W’;
 double percentage = .95;
