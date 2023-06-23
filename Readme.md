@@ -50,3 +50,23 @@ cout << ‘B’;
 - use double quotes
 
 cout << “moo”; 
+
+# escape characters
+
+- \n End Line
+- \t Tab
+- \’ display single quote
+- \” display double quote 
+```
+cout << “She said\t\”LOL”\””; 
+```
+She said “LOL” 
+
+# endl vs \n
+
+- endl not used in quotes
+
+cout << “End the line” << endl; 
+
+- \n is used in quotes
+cout << “End the line\n”; 
