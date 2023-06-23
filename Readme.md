@@ -34,3 +34,19 @@ Output:
 Just TextText Line
 10
 Text: 10 
+
+# Literals 
+
+# Fixed values: 
+- no quotes
+
+cout << 42;
+
+# Character literals
+- use single quotes
+cout << ‘B’;
+
+# String Literals 
+- use double quotes
+
+cout << “moo”; 
