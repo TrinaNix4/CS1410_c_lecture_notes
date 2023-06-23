@@ -22,7 +22,7 @@
 
 Code: 
 
-````
+```
 int num = 10;					
 cout << “Just Text”; 		
 cout << “Text Line” << endl; 	
