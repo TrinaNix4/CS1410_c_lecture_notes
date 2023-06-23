@@ -18,3 +18,19 @@
 - Put it through an interpreter
 - get your output
 
+# output 
+
+Code: 
+
+````
+int num = 10;					
+cout << “Just Text”; 		
+cout << “Text Line” << endl; 	
+cout << num << endl; 			
+```
+
+Output:
+
+Just TextText Line
+10
+Text: 10 
