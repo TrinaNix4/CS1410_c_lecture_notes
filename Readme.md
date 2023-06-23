@@ -172,10 +172,10 @@ percentage = .95;
 ```
 # User input
 
-- Get input from user :cin statement
+- Get input from user (:cin statement)
 
 	
-		* C++
+* C++
   
 double angle; 
 int x, y;
