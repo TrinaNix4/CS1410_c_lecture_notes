@@ -165,10 +165,11 @@ char letter = ‘W’;
 double percentage = .95;
 ```
 * python
+```
 numStudents = 42;
 letter = “W”;
 percentage = .95; 
-
+```
 # User input
 
 - Get input from user :cin statement
