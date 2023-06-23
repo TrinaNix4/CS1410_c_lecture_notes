@@ -109,28 +109,28 @@ Should begin with a letter, cannot begin with a number
 
 # Preferences for naming a variable
 
-Upper Camel Case: Classes and function
+- Upper Camel Case: Classes and function
 
 class PigPlayer()
 void Go()()
 
-Upper Snake Case: Classes and functions
+- Upper Snake Case: Classes and functions
 
 Class Pig_Player ()
 Void Go()()
 
-*programmer preference for which of these 2 they prefer; just be consistent
+* programmer preference for which of these 2 they prefer; just be consistent
 
-Lower CamelCase: Variables 
+- Lower CamelCase: Variables 
 string firstName;
 int primeValue;  
 
-Lower Snake Case: Variables 
+- Lower Snake Case: Variables 
 
 string first_Name;
 int prime_Value; 
 
-Upper Case: Constants
+- Upper Case: Constants
 const int MAX_VALUE = 256;
 
 # Variable Names 
