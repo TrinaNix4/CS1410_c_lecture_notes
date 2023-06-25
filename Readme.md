@@ -176,7 +176,7 @@ percentage = .95;
 
 	
 * C++
-  ```
+  
 double angle; 
 int x, y;
 
@@ -185,7 +185,7 @@ cin >> angle;
 
 cout << “Enter x and y: “;
 cin >> x >> y; 
-```
+
 
 
 * python
@@ -201,11 +201,65 @@ print(x,y)
 -		/ 	division
 -		% 	modulus (remainder)
 -		Add to:   ++  (does not work in python) or +=
--		Subtract from: - - (does not work in python) or -= 
+-		Subtract from: - - (does not work in python) or - 
 
 		E.g.   int xPos = 5;
 			xPos += 3;  so xPos = 8 
 
 		* same in python
 		xPos = 5;
-		xPos
+		xPos += 3;  (xPos = 8)
+
+# Division Types
+
+Modulus division %
+ - result is the remainder
+
+ int division
+
+ - result dropts the decimal places
+ - in python use the // operator 
+ - in c++, results when int is divided by an int
+
+
+ regular division
+ - result is the answer
+
+ # integer division
+
+ - an int divided by an int is an int
+
+ # modulus division
+
+ - finds the remainder
+
+ # python division example
+
+ quotient = 13//2
+ remainder = 13 % 2
+
+ print("13 divided by 2 is ", quotient, "r", remainder)
+
+
+ answer: 13 divided by 2 is 6 r 1 
+
+  - same example in c++
+  int quotient = 13/2 
+  int remainder = 13 % 2
+  cout << "13 divided by 2 is" << quotient << "r" << remainder; 
+
+  answer: 13 divided by 2 is 6 r 1
+
+# constant values 
+
+a value that cannot be altered 
+- this concept is not used in python
+
+const double PI = 3.14159;
+const int MAX_VALUE = 256; 
+
+* all caps when making a constant variable
+
+
+
+
