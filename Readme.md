@@ -293,6 +293,62 @@ math.sin()   math.cos()  math.tan()
 math.exp()  math.sqrt()
 
 
+# library functions in python 
+
+import math
+
+PI = 3.14159;
+result = math.sqrt(PI);
+bigNumber = math.exp(PI, 10);
+lisaSays = math.floor(PI); 
+
+print("Square root of PI ", result)
+print("PI to the 10th", bigNumber)
+print("PI is exactly", lisaSays)
+
+answer:  Square root of PI 1.77245
+PI to the 10th 93647.3
+PI is exactly 3 
+
+# C++ library functions
+
+#include<cmath>
+
+const double PI = 3.14159;
+double result = sqrt(PI);
+double bigNumber = pow(PI, 10);
+double lisaSays = floor(PI); 
+
+cout <<"Square root of PI "<< result << endl;
+cout <<"PI to the 10th" << bigNumber << endl;
+cout <<"PI is exactly" << lisaSays << endl; 
+
+answer:  Square root of PI 1.77245
+PI to the 10th 93647.3
+PI is exactly 3 
+
+
+# set width: setw()
+
+- use a library: #include <iomanip>
+- lets you manipulate the output to display how you want
+
+- sets the field width to be used on the display
+
+cout << setw(5) << "LOL"  right aligned and left aligned
+
+
+# set precision: setprecision()
+
+- use a library: #include<iomanip>
+
+double num = 123.456;
+cout << fixed;
+cout << setprecision(4) << num << endl; 
+
+answer: 123.4560
+
+
 
 
 
