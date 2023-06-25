@@ -260,6 +260,39 @@ const int MAX_VALUE = 256;
 
 * all caps when making a constant variable
 
+# enum constant values
+
+- quick way to do multiple constants 
+- must be int values 
+
+enum{NORTH, EAST, SOUTH, WEST}; 
+
+defined as 0(North), 1(East), 2(South), 3(West) 
+
+- no real difference between const and enum
+- enum cannot be a floating point value while const can 
+
+# library functions
+
+C++:
+#include<cmath>
+
+round() round a number to nearest integer
+ceil() will round up to next integer
+floor() will round down to previous integer
+abs() take absolute value of -3.5   is 3.5
+sin() cos() tan()
+pow()   sqrt()
+
+for python: 
+import math
+
+round()  abs()
+math.ceil() math.floor()
+math.sin()   math.cos()  math.tan()
+math.exp()  math.sqrt()
+
+
 
 
 
