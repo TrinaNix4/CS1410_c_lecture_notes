@@ -434,3 +434,71 @@ else if(die 2 == 1){
 * OR   returns true if one statement is true
 
 * AND returns true if both statements are true 
+
+# Random Numbers
+
+C++:
+- used to create a pseudo-random number 
+- use the rand() function
+
+int value = rand() % 10; 
+
+random number starting at 0 and goes up to 9. not including 10 
+
+python: 
+- use the randrange() function
+
+
+ import random
+ value = random.randrange(0, 10)
+
+
+```
+int r1 = rand() % 99;  //0 to 99
+int r2 = rand() % 99 + 1  //1 to 100
+int r3 = rand() % 99 + 50 //50 to 149
+```
+# srand
+
+- 
+#include <iostream>
+#include <time.h>
+using namespace std; 
+
+int main(){
+  srand(time(0));
+  cout << rand() % 6 + 1 << endl;
+  cout << rand() % 6 + 1 << endl;
+  cout << rand() % 6 + 1 < < endl;
+}
+
+# Loops: Repeate segments of code 
+
+- for loop: iterates a certain number of times
+- while loop: iterates while a condition is true 
+
+# for loop in python 
+-used when you know the number of iterations
+
+for i in range (2, 12, 3) (start, end, change)
+print (i)
+
+output: 2 ,5, 8, 11 then stops cause next iteration would be above 12
+
+for (int i = 2; i <12 ; i += 3) (start, end condition, and increment of 3)
+cout << i << endl;
+
+same output as python 
+
+* if have a negative vaule for change, goes down by 1
+
+for i in range(5, 1, -1)
+print (i)
+
+output: 5, 4, 3, 2 ..does not include the 1.
+ 
+ * C++ 
+ for (int i = 5; i > 1; i--){
+  cout << i << endl; 
+ }
+ 
