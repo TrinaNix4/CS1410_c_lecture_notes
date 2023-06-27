@@ -348,7 +348,89 @@ cout << setprecision(4) << num << endl;
 
 answer: 123.4560
 
+# if statement
 
+- executes when the condition is true 
 
+```
+int force;
+cout << "Enter the Midichlorian level: ";
+cin >> force;
+if(force < 10)
+{
+    cout << "Jedi Hopeful"; 
+}
 
+```
 
+```
+force = input("Enter the midichlorian level: ")
+
+if force < 10:
+  print("Jedi Hopeful")
+
+  ```
+
+  # else 
+
+  - executes when the condition is not true
+
+```
+int force;
+cout << "Enter the Midichlorian level: ";
+cin >> force;
+if(force < 10){
+    cout << "Jedi Hopeful"; 
+}
+else{
+  cout << "Jedi Knight"; 
+}
+```
+
+# else if 
+
+- excutes the first true statement
+
+int force;
+cout << "Enter the Midchlorian level";
+cin >> force;
+
+if(force < 10){
+  cout << "Jedi hopeful"'
+}
+else if(force <25){
+  cout <<"Jedi Padawan"'
+}
+else if(force < 50){
+  cout << "jedi Master;
+}
+else{
+  cout << "Jedi Knight"
+}
+
+# IFs vs If Else
+
+*If   - executes code for all true statements 
+
+if(die1 == 1){
+    cout << "Die 1";
+}
+
+if(die2 == 1){
+  cout << "Die 2";
+  }
+
+*If else  - executes first true statement
+
+if(die1 == 1){
+    cout <<"Die 1";
+}
+else if(die 2 == 1){
+  cout << "Die 2";
+}
+
+# boolean 
+
+* OR   returns true if one statement is true
+
+* AND returns true if both statements are true 
