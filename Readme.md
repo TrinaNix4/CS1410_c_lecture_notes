@@ -491,6 +491,7 @@ cout << i << endl;
 same output as python 
 
 * if have a negative vaule for change, goes down by 1
+(start at 5, go down by 1, and end at 1, but not including 1)
 
 for i in range(5, 1, -1)
 print (i)
@@ -501,4 +502,14 @@ output: 5, 4, 3, 2 ..does not include the 1.
  for (int i = 5; i > 1; i--){
   cout << i << endl; 
  }
- 
+# while loop - python
+
+- iterates while a condition is true 
+
+# do/while loop C++ only
+- iterates while a condition is true 
+
+- if the condition is false to begin with, it will go through the code once then stop 
+
+- for scenarios where we need to go through loop at least one time. 
+
