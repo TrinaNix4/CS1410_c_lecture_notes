@@ -15,9 +15,9 @@ print("Tokens: ", tokens)
 choice = input("Press p to pull")
 
 while tokens > 0 and choice == "p" or choice == "P":
-    slot1 = random.randrange(1, 6)
-    slot2 = random.randrange(1, 6)
-    slot3 = random.randrange(1, 6)
+    slot1 = random.randrange(1, 7)
+    slot2 = random.randrange(1, 7)
+    slot3 = random.randrange(1, 7)
 
     print(slot1, slot2, slot3)
 
