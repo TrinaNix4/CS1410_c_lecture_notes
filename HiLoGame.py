@@ -12,15 +12,9 @@ losses = 0
 game_over = False
 
 # Draw a card - random number between 1 and 15
-
-
-def draw_card():
-    return random.randint(1, 15)
-
-
 # while loop to keep the game going unless player chooses 3 to quit
 while not game_over:
-    card = draw_card()
+    card = random.randint(1, 15)
     print("Card Drawn: ", card)
 
     print(
@@ -29,7 +23,7 @@ while not game_over:
     choice = input("Choose a number: ")
 # choice 1 or 2; draw a new card to compare to previous card
     if choice == "1" or choice == "2":
-        next_card = draw_card()
+        next_card = random.randint(1, 15)
         print("Card Drawn: ", next_card)
 
         if choice == '1' and (next_card >= card) or (choice == '2' and next_card <= card):
@@ -41,6 +35,7 @@ while not game_over:
     elif choice == '3':
         print("Thanks for playing!")
         game_over = True
+    # in case they accidentally choose a number other than 1, 2, or 3
     else:
         print("Invalid choice. Please choose again.")
 
