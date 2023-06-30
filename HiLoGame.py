@@ -20,7 +20,7 @@ while not game_over:
     print(
         "Choose a number!\n 1. The next card will be higher.\n 2. The next card will be lower. \n 3. Quit")
 
-    choice = input("Choose a number: ")
+    choice = input("Your choices are: ")
 # choice 1 or 2; draw a new card to compare to previous card
     if choice == "1" or choice == "2":
         next_card = random.randint(1, 15)
@@ -35,9 +35,6 @@ while not game_over:
     elif choice == '3':
         print("Thanks for playing!")
         game_over = True
-    # in case they accidentally choose a number other than 1, 2, or 3
-    else:
-        print("Invalid choice. Please choose again.")
 
 
 print("Wins: ", wins)
