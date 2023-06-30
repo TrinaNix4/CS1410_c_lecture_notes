@@ -513,3 +513,14 @@ output: 5, 4, 3, 2 ..does not include the 1.
 
 - for scenarios where we need to go through loop at least one time. 
 
+# What is a function? 
+
+- a way to modularize code and make it reusable
+
+functions help us to:
+* manage
+* reuse
+* organize
+
+our code
+
