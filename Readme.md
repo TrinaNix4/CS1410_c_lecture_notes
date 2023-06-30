@@ -524,3 +524,27 @@ functions help us to:
 
 our code
 
+# Functions in C++ 
+
+```
+void GetEmailAddress() {
+  string firstName;
+  string lastName;
+  string emailAddress;
+
+  cout << "Please enter your first name: ";
+  cin >> firstName;
+  cout << "Please enter your last name: ";
+  cin >> lastName;
+
+  emailAddress = firstName + lastName + "@gmail.com";
+
+  cout << emailAddress << endl; 
+}
+
+int main(){
+  GetEmailAddress()
+  GetEmailAddress()
+  GetEmailAddress()
+}
+```
