@@ -687,3 +687,33 @@ double AddFive(double a ){
 }
 ```
 
+# scope
+
+several types:
+- global - can be accessed from anywhere in the program
+- local - "block scope" anything between 2 curly braces; 
+- function - same as block scope but in context of a function
+- namespace - defined in a namespace; 
+  - namespaces are used to contain libraries of code
+  - can include into any scope by including the 'using' statement (using namespace std.)
+
+# recursion
+
+when a function calls itself
+
+- requires
+  - a base case that allows us to exit the function
+  - a call to itself within the function
+- great for problems that are too complex for the typical iterative approach 
+
+
+e.g.
+
+```
+int factorial(int n){ 
+  
+  if(n<= 1)  //this is the base case to exit the function
+    return 1;
+  
+  return n * factorial(n - 1)
+}
