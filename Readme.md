@@ -669,3 +669,21 @@ int main(){
 - functions can have a default parameter
 - these must be defined in the prototype
 
+# Function Overloading
+
+- functions can have the same name but must have different: (doesn't need to be all of these)
+  - parameter data types
+  - parameter count
+  - return type 
+
+e.g 
+```
+int AddFive(int a) {
+  return 5 + a; 
+}
+
+double AddFive(double a ){
+  return 5 + a; 
+}
+```
+
