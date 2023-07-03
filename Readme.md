@@ -621,6 +621,7 @@ e.g.
   - pass by value
   - pass by reference
 
+# pass by value 
 
   - pass by value - also known as "pass by copy'
   - modifies a copy of the variable 
@@ -641,4 +642,30 @@ int main() {
 
   - doesn't modify the vairable, just modifies a copy of it within the function
 
+
+# pass by reference
+
+- modifies the actual variable being passed in 
+- notice nothing is being returned 
+- the value of b has changed
+
+```
+void AddFive(int& a){
+  a = a + 5;
+}
+
+int main(){
+  int b = 5;
+  AddFive(b);
+  cout << b << endl; 
+}
+
+//output is 10
+```
+
+- take the variable we just passed in and modify it; (not modifying a copy)  modifies the specific variable 
+
+# default paramters 
+- functions can have a default parameter
+- these must be defined in the prototype
 
