@@ -601,5 +601,44 @@ e.g.  #include "my_function.h"
   - #include "..."
   - .h extension
 
-  
+  # header files (.h)
+  must have:
+e.g.
+  #ifndef MY_FUNCTIONS_H (if not defined) 
+  #define MY_FUNCTIONS_H 
+
+  void GetEmailAddress();
+
+  #endif 
+
+# Source Code Files (.cpp)
+
+- function defintions and other code can be stored in the source file 
+  - .cpp file 
+
+  # Parameter Passing
+
+  - pass by value
+  - pass by reference
+
+
+  - pass by value - also known as "pass by copy'
+  - modifies a copy of the variable 
+  - notice b variable remains the same 
+```
+int AddFive(int a){
+  return a = a + 5
+}
+
+int main() {
+  int b = 5; 
+  AddFive(b);
+  cout << b << endl; 
+}
+
+//output is 5
+```
+
+  - doesn't modify the vairable, just modifies a copy of it within the function
+
 
