@@ -548,3 +548,23 @@ int main(){
   GetEmailAddress()
 }
 ```
+
+# Functions in C++
+
+Every C++ function should include: 
+* return type
+* name
+* parameters
+* {}
+
+- functions in C++ need to be told which type of data to return to the user 
+
+Common return types include:
+* void - returns nothing
+* int
+* double
+* float
+* char
+* classes
+* memory addressses
+
