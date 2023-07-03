@@ -560,11 +560,46 @@ Every C++ function should include:
 - functions in C++ need to be told which type of data to return to the user 
 
 Common return types include:
-* void - returns nothing
+* void - returns nothing; when using a void return type, 'return' keyword is not required in function body, but with every other return type it is required.
 * int
 * double
 * float
 * char
 * classes
 * memory addressses
+
+- e.g.
+int AddFive(int a){
+  return a + 5;
+}
+
+* where do we keep our functions in C++? 
+* do they always go before the main function? 
+
+- if we arent defining our function above main, then a 'function prototype' is required 
+
+a function prototype consists of:
+* return type 
+* name
+* parameter(s)
+* semicolon
+
+e.g.  void GetEmailAddress(); 
+it declares the function to the compiler
+
+* can be placed above main
+* can be placed in a header file
+
+e.g.  #include "my_function.h"
+
+# Header files 
+
+- allows us to link our program to library code 
+- system files - use <>
+  - #include <...>
+- Programmer defined files - use quotation marks instead of <>
+  - #include "..."
+  - .h extension
+
+  
 
