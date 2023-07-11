@@ -841,4 +841,130 @@ access any of the members of the class; the member variable id is set to private
   - this protects member variables by being accessed by outside users;
   - gives access to public methods so user can have access to private methods but in a controlled environment so they can't make changes that don't make sense
 
-  
+  # Constructors
+
+  - a class constructor is a special member function of a clsss that is executed whenever we create new objects of that class
+  * it is a function and it creates objects - it creates an object of that class
+  * named after the class iself
+  * gives our member variables value 
+
+  main purpose is to create the object but to give our attributes or member variables values
+
+  * notice the public method named Student has no return type
+
+  class Student {
+    private: 
+      int id_;
+      string name_;
+      string email_; 
+
+    public:
+      Student(); // this is the constructor, a public function because we want users of our class to be able to create studen objects 
+      //no return type  - every constructor will only return one thing. an object of the class that its constructing  (a student contructor would return a newly constructed student object)
+
+      * prototype shown in the class
+
+      class Student {
+        private: 
+          string name_;
+          string email_;
+          int id_;
+
+        public:  //this is the prototype 
+          Student();
+      }
+
+      * used in main function
+      int main () {
+        Student s1; // this calls the above prototype, calls the constructor, creates a new object (put class name and then name of variable)  
+      }
+
+  }
+
+- several kinds of constructors can be defined.  
+  2 we are talking about: 
+    - default
+    - general 
+
+    # default constructor 
+
+    - creates an empty object 
+      - sets numeric values to 0 
+      - sets character/string values to blank 
+      - sets objects to empty 
+
+      * notice constructor is written outside of class
+
+      e.g. of a default constructor written outside of the class; 
+
+      Student::Student() {
+        id_ = 0;
+        name_ = "";
+        email_ = ""; 
+      }
+
+
+* default constructor creates an empty object
+      - can be written inline using initializer list (inline means we can keep it in our class) 
+      - very common way to make a default constructor; just creating an empty object
+      - makes it so we don't need to define it in 2 places
+      - should only be defined in one place  
+      - a little bit different than a prototype 
+
+      * notice {} at the end of the list in example 
+
+      class Student {
+        private:
+          int id_; 
+          std::string name_;
+          std::string email_;
+
+        public: 
+          Student() : id_(0), name_(""), email_(""){}  
+          //initializer list;
+          //this is defining the method; 
+          //the curly braces represent the body of the function;
+          //instead of using the = sign assignment operator, we put the values in parentheses.   
+      }
+
+      # General Constructor 
+
+      - creates an object with user chosen values given to the member variables; 
+      * notice the constructor has parameters
+
+* a common way to identify member variables is by putting an underscore after the name
+* good way to differentiate from other variables that might have the same name
+* member variable will always have the underscore; 
+
+* defined outside of the class; scoping it back to student class
+    Student::Student(int id, std::string name, std::string email) {
+      id_ = id; (id_ = our passed in id)
+      name_ = name; (name_ = our passed in name)
+      email_ = email; etc. 
+    }
+
+    * gives our object values that the user has decided on
+
+    * can also be written inline using initializer list 
+    * should only be defined in one place 
+
+    * notice parameters used in () for each variable at the end of the list  
+
+    public:
+      Student(int id, std::string name, std::string email) : id_(id), name_(name), email_(email) {}
+
+      * can use an inline initializer as long as you don't care what the values are; (like example above. )
+
+      # Using Constructors  
+
+      * default does not need ()
+      * to call general add() and values 
+
+      int main () {
+        //default - making an empty object
+        Student s1;
+
+        //general - giving our object some values
+        Student s2(135246, "John Smith", "johnsmith@gmail.com")
+      }
+
