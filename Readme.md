@@ -727,4 +727,43 @@ C++ and other object oriented programming languages support creating user define
   - a way to encapsulate and manage data
   - each object represents a noun (person, place, thing)
 
+  # classes in C++
+  the class is like a cookie cutter for our object 
+   - we describe our object using a class
+
+   notice here the class has a name and attributes: attributes are describing the student
+
+   ```
+
+   class Student {
+    private: 
+      int id:
+      string name_;
+      string email_; 
+   }
+
+   int main() {
+    //primitive data types 
+    int x;
+    double y;
+
+    //object
+    Student s1; (Student is data type)
+   }
+
+   ```
+
+- Declared in C++ using:
+  * Class keyword
+  * Name
+  * Curly braces 
+  * ;
+
+  ```
+  class Student {
+
+  }; 
+
+  ```
+
   
