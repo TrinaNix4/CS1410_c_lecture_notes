@@ -759,11 +759,86 @@ C++ and other object oriented programming languages support creating user define
   * Curly braces 
   * ;
 
+  * can be declared in a .h file or above the main function; typically create our class in its own .h file and name the .h file the same as the class
+
   ```
   class Student {
 
   }; 
 
   ```
+
+- classes have members defined within them
+  - member variables
+  - member functions 
+
+  * called members because they're a member of the class
+
+  ```
+  class Student {
+    int id_;
+    string name_;
+    string email_;
+
+    void SetId(int id);
+    void SetName(string name);
+    void SetEmail(string email)
+  }
+
+//thesse are function prototypes defined in the class; this is typical to put prototypes and not definitions in our classes
+
+```
+```
+
+- attributes and methods have visibility declarations specifications: 
+* private
+* public
+* protected
+
+* class visibility defaults to private if not specified  by user
+
+```
+class Student {
+  private: 
+    int id_;
+    string name_;
+    string email_;
+
+  public: 
+    void SetId(int id);
+    void SetName(string name);
+    void SetEmail(string email);
+};
+```
+
+* every member should be designated as private or public;  (protected has to do with inheritance, we aren't working with this yet)
+
+* these tell us who has access to the attribute or function
+  - private  means only the class has access to it; if we tried to access the variable int id outside of the class, it wouldn't allow it
+  
+for example: in main, we've created a student object  (Student.s1 - student data type and then name (s1)); then we use the dot operator to try and 
+access any of the members of the class; the member variable id is set to private, so wecan't access it in main. when working on the object outside of the class itelf, it's not gonna let us access the member variable because it's designated as private, but it would allow accewss to function SetId because it's designated as public.
+```
+  int main(){
+    Student s1; 
+    s1.id;
+    s1.SetId(1357642);
+  }
+  ```
+* typical to designate member variables as private, and member functions as public  
+  * member variable id_ is inaccessible outside of the class specification while set to private 
+
+- to access these variables and methods outside of the class we use th dot operator
+  - Student s1;
+  s1.SetName("Frodo"); 
+
+  * dot connects variable name and method defined in class;  
+
+
+
+* encapsulation - 
+  - attributes are only modified by methods within their own class; 
+  - this protects member variables by being accessed by outside users;
+  - gives access to public methods so user can have access to private methods but in a controlled environment so they can't make changes that don't make sense
 
   
