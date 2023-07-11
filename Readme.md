@@ -717,3 +717,14 @@ int factorial(int n){
   
   return n * factorial(n - 1)
 }
+
+```
+
+# Objects in C++ 
+
+C++ and other object oriented programming languages support creating user defined data types: 
+  - called objects
+  - a way to encapsulate and manage data
+  - each object represents a noun (person, place, thing)
+
+  
