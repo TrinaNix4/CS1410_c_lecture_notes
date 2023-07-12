@@ -968,3 +968,14 @@ access any of the members of the class; the member variable id is set to private
         Student s2(135246, "John Smith", "johnsmith@gmail.com")
       }
 
+# initializer lists 
+
+- constructors can be written inline as an initializer list
+- can set values using () rather than =
+empty {}
+
+public: 
+
+  Student(int id, std::string name, std::string email) : id_(id), name_(name), email_(email) {}
+* giving attributes values 
+* cannot be in the .cpp file must be in the class specification file  
