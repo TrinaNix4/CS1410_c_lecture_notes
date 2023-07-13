@@ -1056,3 +1056,65 @@ class Student {
 };
 #endif
 
+# Member functions 
+
+- should have the following functions in each class 
+* constructors
+* destructor 
+* setters
+* getters 
+
+class Student {
+
+  private: 
+    int id_;
+    std::string name;
+    std::string email;
+
+  public:
+    //constructors
+    Student() : id_(0), name_(""), email_("") {}
+    Student(int id, std::string name, std::string email) : id_(id), name_(name), email_(email) {}
+
+    //setters -set all our attribute values
+    void SetId(int id);
+    void SetName(std::string name);
+    void SetEmail(std::string email);    
+
+    //Getters - get the values in order to display them to user
+    int GetId() const {return id_;}
+    std::string GetName() const { return name_; }
+    std::string GetEmail() const {return email_;}
+};
+
+# Constructors
+
+- give the user a way to create an object of that type of class
+
+* can be written inline using initialize tests
+* can be written outside of class 
+
+- Student() : id_(0), name_(""), email_("") {}
+    
+- Student(int id, std::string name, std::string email) : id_(id), name_(name), email_(email) {}
+
+# Setters 
+
+- a way to control how values are set and protect member variables  
+
+//Setters 
+
+    void SetId(int id);
+    void SetName(std::string name);
+    void SetEmail(std::string email);  
+
+some examples of setters: 
+  - makes sure the user cannot enter an address without the @ character
+
+  void Student::SetEmail (std::string email) {
+    if(email.find('@')!= std::string::npos)
+      email_ = email;
+    else
+      std::cerr << "Invalid email address" << std::endl;  }
+
+  
