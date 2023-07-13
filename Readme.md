@@ -1117,4 +1117,84 @@ some examples of setters:
     else
       std::cerr << "Invalid email address" << std::endl;  }
 
+  # Getters 
+
+  - a way for the user of the class to see the values without having direct access to them
+
+      - can usually be written in class specification
+      - written as const since these functions are written only view the values, not to modify them 
+
+  example: 
+
+  //Getters - sometimes they don't want to modify it, they just want to view it. in this case, use a getter 
+
+  int GetId() const { return _id; }
+  std::string GetName() const { return name_ };
+  std::string GetEmail() const { return email_ }; 
+
+# Destructors 
+
+- special member functions in C++ that are meant to destroy objects when they go out of scope 
+
+//destructor 
+whenever we create an object, we also want to destroy it. important in the process of managing memory
+
+~Student() {}
+
+- has the same name as class name preceded by a ~ symbol
+- not possible to define more than one
+- does not require arguments
+- does not return any value
+- automatically called when object goes out of scope 
+
+* they release memory space occupied by teh objects created by constructor 
+
+# structs
+
+- structures are a way to group several related variables into one place
+
+- can be used almost exactly the same way as a class
+
+struct Assignment {
+  string name_;
+  int points_; 
+};
+
+- class has default visibility setting as: private 
+- struct has default visibility setting as : public 
+
+ - can have methods just like a c ++ class
+
+ struct Assignment {
+  string name_;
+  int points_;
+
+  Assignment() : name_(""), points_(0) {}
+ }; 
+
+ in main...
+ notice we have access to the member variables 
+ - structs have default visibility of public 
+
+ Assignment a1:
+  a1.name_ = "Learning Activity: classes & objects";
+  a1.points_ = 10;
+  cout << a1.name_ << endl; 
+  cout << a1.points_ << endl; 
+
+  - structs are a way to group several related variables into one place
+
+  - can be used almost exactly the same way as a class
+
+  struct declaration:
+  struct
+  {
+      string name_;
+      int points_;
+  } assignment1;
+
+  used in main: 
+  assignment1.name_ = "Learning Activity";
+  assignment1.points_ = 10; 
+
   
