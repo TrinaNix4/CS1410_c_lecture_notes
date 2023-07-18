@@ -1197,4 +1197,68 @@ struct Assignment {
   assignment1.name_ = "Learning Activity";
   assignment1.points_ = 10; 
 
-  
+  # OVERLOADED OPERATORS 
+
+  overloaded function - a function that has the same name as another function 
+
+  - different parameters 
+    - different number of parameters 
+    - different data types
+    - etc 
+```
+    void Print(){
+      cout << "My name is Sam!" << endl; 
+
+    }
+
+    void Print(string name){
+      cout << "My name is " << name << "!" << endl; 
+    }
+
+    int main() {
+      Print();
+      Print("Joe")
+    }
+```
+* loading the same function name with different meanings 
+
+# Overloaded Operators 
+
+- in C++, we can redefine operators to work for our classes 
+
+- we can change what it means when we use these symbols in our code 
+
+- operators are naturally used with primitive data types 
+
+why redefine any operators? 
+we cannot use operators in our code for objects until they are defined  
+
+Box a;
+Box b;
+Box c = a + b
+
+* overloading an operator is simply writing a function with specialized syntax
+
+- different kinds of operators will use different syntax
+
+* binary 
+  - a + b  (2 operands L and R)
+  - a - b 
+  - a && b
+  - a != b 
+
+  * unary 
+  - a++
+  - ++a
+  - -a 
+
+  ```
+  //binary
+  Box a(1, 1, 2);
+  Box b(1, 1, 2);
+  Box c = a + b;
+
+//unary
+Box f(4, 4, 4);
+-f 
+  ```
