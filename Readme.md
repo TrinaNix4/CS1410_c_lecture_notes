@@ -1335,7 +1335,74 @@ Box c = a + b;
       // we are returning a 'Box' object
       // we are using a reference to a Box object as our parameter
       //set to const because it's read only. we aren't going to modify any of the variables 
-      
+
       Box operator+(Box const &rhs) const; 
--  
+-  the overloaded operator above would be defined in our source file
+- scope the operator+ back to class
+- add up calling object and parameter's member variables 
+
+* notice we have access to two object's member variables. the calling object and the rhs parameter
+
+Box Box::operator+(Box const &rhs) const {
+  Box temp;
+
+  temp.length_ = length + rhs.length_;
+  temp.height_ = height_ + rhs.height_;
+  temp.width_ = width_ + rhs.width_;
+
+  return temp; 
+}
+
+ Person p;
+ p.Print("Joe");
+ p.Print where p is implicit
+ and ("Joe") is an explicit argument; 
+
+ - implicit argument is on the left-hand side; the implicit is the one calling the operator
+
+ - explicit argument is on the right hand side; the explicit argument is what we are passing in as a parameter to our function
+
+ Box x; 
+ Box y;
+ Box z = x + y; 
+ //could be written 
+ z = x.operator+(y)
+
+ //overloaded operators
+ Box operator+(Box const &rhs) const; 
+
+
+# Unary
+
+- syntax for an overloaded unary operator
+- only the implicit argument is required here 
+
+.h file -> Box operator-(); 
+
+.cpp file ->   
+Box Box::operator-(){
+  return Box(-length_, -width_, -height_);
+}
+
+main -> 
+//unary
+Box f(4,4, 4);
+-f; 
+
+# friend functions - binary 
+- not members of the class
+- given access to the private member variables
+
+* use keyword friend in prototype
+* no special syntax in definition
+* no implicit argument
+* binary uses two parameters
+* unary use one parameter
+
+* like a good friend that you give a key t your home 
+
+//friend functions
+friend Box operator+(Box const &lhs, Box const &rhs);
+
+
 
