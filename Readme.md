@@ -1485,3 +1485,52 @@ catch() {
 
 ``````
 
+# throw statement 
+
+``````
+//basic if statement
+string CreateCheckingAccount(int age) {
+  if(age > 17)
+    return "Your account has been created.";
+  else
+    throw "error";
+}
+
+``````
+//simple try/catch
+
+```
+int main() {
+  try {
+    CreateCheckingAccount(17);
+  }
+  catch(...) {
+    count << "Does not reach age requirements." << endl; 
+  }
+
+}
+```
+- try/catch  have our throw. any generic throw. as long as (...) if a throw happens within the try block, it will do wahtever the catch block  has inside it. 
+
+- can also use an intger in place of throw 
+  - good if you have some kind of error codes in system and based off what the error was, use a particular code to handle it 
+``````
+  //try/catch with integer instead of ellipses
+
+  try {
+    CreateCheckingAccount(17);
+  }
+
+  catch(int errorCode){
+    cout << "Error: " << errorCode << endl;
+    cout << "Age requirement not met." << endl;
+  }
+  catch(...){
+    cout << "Must be 18 or older." <<  endl; 
+  }
+  
+  ``````
+  * output Error: 515
+  Age requirement not met. 
+
+  
