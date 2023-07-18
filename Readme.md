@@ -1474,5 +1474,14 @@ std::ostream& operator<<(std::ostream &os, Box &box){
 - similiar to insertion operator
 - uses istream class 
 
+# try/catch in C++
+``````
+try {
+  //block of code to try
+}
+catch() {
+  //block of code to handle errors 
+}
 
+``````
 
