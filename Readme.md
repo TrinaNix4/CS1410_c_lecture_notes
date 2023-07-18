@@ -1342,7 +1342,7 @@ Box c = a + b;
 - add up calling object and parameter's member variables 
 
 * notice we have access to two object's member variables. the calling object and the rhs parameter
-
+``````
 Box Box::operator+(Box const &rhs) const {
   Box temp;
 
@@ -1357,11 +1357,11 @@ Box Box::operator+(Box const &rhs) const {
  p.Print("Joe");
  p.Print where p is implicit
  and ("Joe") is an explicit argument; 
-
+``````
  - implicit argument is on the left-hand side; the implicit is the one calling the operator
 
  - explicit argument is on the right hand side; the explicit argument is what we are passing in as a parameter to our function
-
+``````
  Box x; 
  Box y;
  Box z = x + y; 
@@ -1371,7 +1371,7 @@ Box Box::operator+(Box const &rhs) const {
  //overloaded operators
  Box operator+(Box const &rhs) const; 
 
-
+``````
 # Unary
 
 - syntax for an overloaded unary operator
@@ -1403,8 +1403,8 @@ Box f(4,4, 4);
 
 //friend functions
 friend Box operator+(Box const &lhs, Box const &rhs);
-
-Box opertor+(Box const &lhs, Box const &rhs){
+``````
+Box operator+(Box const &lhs, Box const &rhs){
   double length = lhs.length_ + rhs.length_;
   double width = lhs.width_ + rhs.width_;
   double height = lhs.height_ + rhs.height;
@@ -1412,7 +1412,7 @@ Box opertor+(Box const &lhs, Box const &rhs){
   return Box(lenght, width, height); 
 }
 
-
+``````
 * no keyword friend and not scoped back to class because it's not a member variable
 
 why use a friend function?
@@ -1433,16 +1433,18 @@ friend Box operator+(double number, Box const &rhs);
 # Overloaded insertion operator << 
 
 - we may want to use the iostream class to print our objects 
-
+``````
 //common
 int d = 5;
 cout << d << endl; 
-
+``````
 //must overload the << operator because it won't automatically work with user-defined classes
+
+``````
 //we do this by overloading the insertion opeerator
 Box a(1, 1, 2)
 cout << a << endl; 
-
+``````
 - overloeading the inserter operator has special syntax for the function header
 
 * must be a friend
@@ -1459,16 +1461,18 @@ cout << a << endl;
  - must return the ostream object
 
 
-
+``````
 std::ostream& operator<<(std::ostream &os, Box &box){
   os << "Length: " << box.length_ << "Width: " << box.width_ << "Height: " << box.height_ << std::endl; 
 
   return os; //returning a reference to an ostream object
 }
 
+``````
 # overloaded extraction operator >>
 
 - similiar to insertion operator
 - uses istream class 
+
 
 
