@@ -1430,5 +1430,45 @@ friend Box operator+(double number, Box const &rhs);
 //Left hand parameter we are passing in a number, 
 //right hand parameter we are passing in a box, 
 
+# Overloaded insertion operator << 
+
+- we may want to use the iostream class to print our objects 
+
+//common
+int d = 5;
+cout << d << endl; 
+
+//must overload the << operator because it won't automatically work with user-defined classes
+//we do this by overloading the insertion opeerator
+Box a(1, 1, 2)
+cout << a << endl; 
+
+- overloeading the inserter operator has special syntax for the function header
+
+* must be a friend
+* must return a reference to an ostream object
+* must pass in a reference to an ostream object
+* must pass in a reference to the class
+
+* friend std::ostream& operator<<(std::ostream& os, Box &box)
+ binary - has an operand on the L which is the cout object and and an operand on the R, whatever object we want to put into our ostream object (in the case above, we are overloading it for our box class);
+
+ * can customize how the member variables are printed 
+
+ - must use <<  to stream in output to ostream object 
+ - must return the ostream object
+
+
+
+std::ostream& operator<<(std::ostream &os, Box &box){
+  os << "Length: " << box.length_ << "Width: " << box.width_ << "Height: " << box.height_ << std::endl; 
+
+  return os; //returning a reference to an ostream object
+}
+
+# overloaded extraction operator >>
+
+- similiar to insertion operator
+- uses istream class 
 
 
