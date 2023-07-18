@@ -1391,7 +1391,7 @@ Box f(4,4, 4);
 
 # friend functions - binary 
 - not members of the class
-- given access to the private member variables
+- but still given access to the private member variables
 
 * use keyword friend in prototype
 * no special syntax in definition
@@ -1403,6 +1403,32 @@ Box f(4,4, 4);
 
 //friend functions
 friend Box operator+(Box const &lhs, Box const &rhs);
+
+Box opertor+(Box const &lhs, Box const &rhs){
+  double length = lhs.length_ + rhs.length_;
+  double width = lhs.width_ + rhs.width_;
+  double height = lhs.height_ + rhs.height;
+
+  return Box(lenght, width, height); 
+}
+
+
+* no keyword friend and not scoped back to class because it's not a member variable
+
+why use a friend function?
+- what ifi want to use the left operand for the integer and the right for the box object?  
+Box a(1, 1, 2);
+Box c = 5 + a; 
+5.operator+(a) is not legal; 
+won't compile 
+
+so a friend fucntion will help us do this:
+friend Box operator+(double number, Box const &rhs); 
+//friend keyword, 
+//returning a box object,
+// operator keyword and plus sign, 
+//Left hand parameter we are passing in a number, 
+//right hand parameter we are passing in a box, 
 
 
 
