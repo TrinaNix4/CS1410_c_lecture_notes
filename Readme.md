@@ -1261,4 +1261,81 @@ Box c = a + b
 //unary
 Box f(4, 4, 4);
 -f 
-  ```
+  
+
+  - 2 strategies for overloading operators
+
+  - written as member functions, as members of our class
+    - as a member of a class
+    
+
+    - written as friend functions
+      - as a friend of a class
+
+  - member functions
+    - binary 
+    - unary
+
+  - friend functions
+    -binary
+    - unary
+
+# Member functions - Binary
+
+- syntax for overloading binary operators as class member functions
+- binary meaning 2 operands 
+
+//binary
+Box a(1, 1, 2);
+Box b(1, 1, 2);
+Box c = a + b; 
+
+
+ * Example Box class
+
+ Manages member variables
+    - length_
+    - width_
+    - height_
+
+    class Box {
+      private:
+        double length_;
+        double width_;
+        double height_;
+
+      public:
+        //default and general constructor
+        Box():length_(0), width_(0), height(0) {}
+
+        Box(double length, double width, double height) : length_(length), width_(width), height_(height) {}
+
+        //Setters
+        void SetLength(double);
+        void SetWidth(double);
+        void SetHeight(double);
+
+        //Getters
+        double GetLenght() const { return length_;}
+        double GetWidth() const { return width_;}
+        double GetHeight() const {return height_;}
+        double GetVolume() const{
+          return length_ * width_ * height_; 
+        }    };
+
+         * need to be able to add up all the boxes in order to calculate the total volume 
+          * 1. specify prototype in class
+          * 2. use operator keyword
+          * 3. and + sign 
+
+      * notice the function and parameter has been set to "read only" by using const 
+
+      //overloaded operators
+      //below is the prototype
+      // we are returning a 'Box' object
+      // we are using a reference to a Box object as our parameter
+      //set to const because it's read only. we aren't going to modify any of the variables 
+      
+      Box operator+(Box const &rhs) const; 
+-  
+
