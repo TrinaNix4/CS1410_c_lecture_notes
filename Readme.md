@@ -1533,4 +1533,11 @@ int main() {
   * output Error: 515
   Age requirement not met. 
 
+  # characters 
+
+  the char data type is for a single character
+
+  char letter = 'a';
+  string letters = "apple"; 
+
   
