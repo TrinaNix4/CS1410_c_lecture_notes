@@ -1540,4 +1540,13 @@ int main() {
   char letter = 'a';
   string letters = "apple"; 
 
+  # special characters
+
+  - \n - end line characters
+  - \t spaces the text out by a tab
+  - \0 null or no value
+  - \' allows you to put a single quote in a string
+  - \" allows you to put a double quote in a string
+  - \\ allows you to put a backlash in a string 
+
   
