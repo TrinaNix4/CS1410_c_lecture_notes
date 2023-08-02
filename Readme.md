@@ -1566,3 +1566,30 @@ char letter = 'a';
 letter = toupper(letter);
 cout << letter; 
 ``````
+ # checking for case 
+
+ - determines if a letter is upper or lower case 
+ * isupper() checks for an uppercase letter
+ * islower() checks for lower case letter
+
+ ```
+ char letter = 'a';
+ if(islower(letter)) {
+  cout << "lowercase";
+ }
+ ```
+ # additional functions
+
+ determines different characteristics about a character
+ * isdigit() determines if the character is a number character
+ * isalpha() determines if the character is a-z or A-Z
+ ispunct() determines if the character is punctuation
+``````
+ char letter = '!';
+ if(ispunct(letter)){
+  cout << "punctuation"; 
+ }
+
+ ``````
+ 
+ 
