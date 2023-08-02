@@ -1543,10 +1543,26 @@ int main() {
   # special characters
 
   - \n - end line characters
-  - \t spaces the text out by a tab
-  - \0 null or no value
-  - \' allows you to put a single quote in a string
-  - \" allows you to put a double quote in a string
-  - \\ allows you to put a backlash in a string 
+  - \t - spaces the text out by a tab
+  - \0 - null or no value
+  - \' - allows you to put a single quote in a string
+  - \" - allows you to put a double quote in a string
+  - \\ - allows you to put a backlash in a string 
 
-  
+  # single vs double quotes
+
+  - single quotes for a single characer
+  - double quotes for multiple characters 
+
+
+# upper and lower case
+
+- makes a character to be upper or lower case 
+
+* toupper(): makes the character uppercase
+* tolower(): makes the character lowercase 
+``````
+char letter = 'a'; 
+letter = toupper(letter);
+cout << letter; 
+``````
