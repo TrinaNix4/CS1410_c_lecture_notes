@@ -1591,5 +1591,27 @@ cout << letter;
  }
 
  ``````
- 
+
+ # what are c strings?
+
+ - an array of characters
+ - terminates with a null character
+
+ char name[10] = "Weber";
+ W - e - b - e - r \0 (indicates end of string)
+ so even though it can be 10 charactetrs long it only displays up to null terminator
+but space is still allocated up to 10 spaces for a char
+
+
+# literal c-strings
+
+- array of characters
+- terminates with a null character
+
+char name[] = "Weber"; 
+
+square brackets and no specified size; will create characgter array with enough characters that it needs including the null terminator 
+
+
+
  
