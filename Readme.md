@@ -1612,6 +1612,74 @@ char name[] = "Weber";
 
 square brackets and no specified size; will create characgter array with enough characters that it needs including the null terminator 
 
+# getting input for c-strings
+
+```
+char name [5];
+cin >> name: //enter weber 
+
+```
+if i enter a word longer than allocated , then it will create an error 
+
+often enter in a value that's bigger so there is extra room in case the user enters something larger
+
+# cout statement 
+
+```
+ char name [20];
+ cin >> name;
+ cout << name; 
+
+ ```
+
+ # c-string functions
+
+ #include <cstring>
+must be included in order to use the functions;
+- strlen()
+- strcpy()
+- strcmp()
+- strcat()
+# length of a c-string
+- finds the length of a cstring
+
+```
+char cstr[21] = "hello";
+int len = strlen(cstr);
+cout << len; 
+
+//output: 5 
+```
+# copy a c-string
+
+* cannot copy using = 
+
+```
+char cstr[21] = "hello";
+char full[] = cstr;
+cout << full; 
+
+```
+error: array initilizer must be an initializer list or string literal 
+ - character array of size 20
+ - it won't let me copy the "hello" because cstr is not a string literal even though it's set = to the same value 
+
+ instead:
+
+ Strcpy: copies a string
+ ```
+ char cstr[21] = "hello";
+ char full[21];
+ strcpy(full, cstr);
+ cout << full; 
+
+ //output hello 
+ ```
+- cstr is now stored in my variable full - using strcpy(full, cstr); 
+
+
+
+
 
 
  
