@@ -1678,6 +1678,35 @@ error: array initilizer must be an initializer list or string literal
 - cstr is now stored in my variable full - using strcpy(full, cstr); 
 
 
+# compare strings
+
+- the strcmp() function alllows you to compare strings
+
+```
+char cstr1 [] = "Apple";
+char cstr2 [] = "Banana";
+
+if(strcmp(cstr1, cstr2) <= 0) {
+  cout << cstr1 << "is less than" << cstr2; 
+}
+
+//output "apple is less than banana"
+//compare the first letter of each A and B and A is less than B based on ASCII value 
+
+```
+
+# concatenate strings
+
+- the strcat function chains c-strings together
+
+```
+char cstr [21] = "hello";
+strcat(cstr, "world");
+cout << cstr; 
+
+//output Hello World 
+
+```
 
 
 
