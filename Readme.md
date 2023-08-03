@@ -1708,7 +1708,32 @@ cout << cstr;
 
 ```
 
+# concatenate c-strings
 
+- the strcat function chains c-strings together
 
+```
+char cstr [21] = "hello";
+strcat(cstr, "world");
+cout << cstr; 
+
+```
+
+# iterating a c-string
+
+- use the [] to access a position in the c-string
+
+```
+char cstr [21] = "hello";
+for(int i = 0; i < strlen(cstr); i++) {
+  cstr[i] = toupper(cstr[i]);
+}
+cout << cstr; 
+
+//output HELLO
+ 
+ ```
+
+ # std::strings
 
  
