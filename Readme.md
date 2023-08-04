@@ -1994,4 +1994,36 @@ Cons
 
 # Parsing using stringstream
 
+- you can use the stringstream to parse a string
+
+```
+string str = "one two three four";
+stringstream sout(str);
+
+string temp;
+while(sout >> temp) {
+  cout << temp << endl; 
+}
+
+//output one  
+          two 
+          three 
+          four 
+//1st loop is one
+//next time through loop is two
+//because it goes up to the space 
+
+```
+can also: 
+
+```
+string str = "one two three four"
+stringstream sout; 
+sout << str;
+string temp; 
+while(sout >> temp) {
+  cout << temp << endl; 
+}
+
+```
 
