@@ -1951,5 +1951,47 @@ cout << str[99];
 
 - this is allowed but will display random junk; whatever is at the position 
 
+# C-strings vs std::strings
+
+C-string
+Pros
+* fixed length 
+* primitive data type 
+
+Cons
+* watch out for out of bounds
+
+ Std:string
+ Pros
+ * more intuitive to use
+ * checks for out of bounds  
+
+ # stringstream
+
+ #include <sstream>
+
+ an object used to ...
+ * add strings, objects, and values into a stream
+ * parse streams and strings into values 
+
+ # Converting to a string
+
+ - use the << sign to add to the stringstream 
+
+ - .str() function converts the stream to a string 
+
+ ```
+ //declared stringstream with sout
+ stringstream sout;
+ sout << "Add Word "; 
+ sout << 42 << " " << 3.1415;
+ string mystring = sout.str();
+
+ //output Add Words 42 3.1415
+ 
+ ```
+
+
+# Parsing using stringstream
 
 
