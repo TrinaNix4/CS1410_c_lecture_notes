@@ -1736,4 +1736,96 @@ cout << cstr;
 
  # std::strings
 
- 
+
+- define a string
+
+```
+string s1("Man");
+string s2 = "Beast";
+string s3; 
+
+s3 = s1; 
+
+```
+
+- two strings can be made into one string using the + concatentation operator: 
+
+
+``````
+s3 += " and " + s2; 
+``````
+
+# string input 
+
+- cin retrieves to a space  
+string name;
+cin >> name;
+
+- getline retrieves to a new line (enter)
+string name;
+getline(cin, name);
+
+# issues with getline
+
+the cin command does not read the endl character
+
+so to fix it: 
+
+string sentence;
+cout << "Enter number: ";
+cin >> number;
+cout << "Enter sentence: ";
+cin.ignore();
+getline(cin, sentence);
+
+cout << "Values: " << 
+
+
+*enter number: 5
+Ignore: <enter>
+Enter sentence: Hello World
+
+so anytime you have a cin statement, ignore the "enter" before you do a getline statement
+
+# Length or Size 
+
+- find the size or length of the string
+- both commands do the same thing
+
+```
+string str "hello";
+cout << str.size();  //5
+cout << str.length(); //5
+
+
+```
+
+# CONCATENATING 
+
+- chaining together strings
+
+use + or += 
+```
+string str = "hello";
+str += " ";
+string full = str + "World";
+cout << full; 
+
+//output hello World 
+
+```
+
+# concatenating with numbers 
+
+- chaining together strings and numbers 
+- gives an error
+``````
+string str = "life the universe and everything";
+int value = 42;
+string full = str + value; 
+cout << full;
+``````
+//output error
+
+
+
