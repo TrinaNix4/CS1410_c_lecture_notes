@@ -1828,4 +1828,128 @@ cout << full;
 //output error
 
 
+# comparing
+
+- same as values 
+
+```
+string str1 = "Apple";
+string str2 = "Banana";
+if(str1 < str2) {
+  cout << "A is smaller than B";
+}
+
+//output A is smaller than B
+```
+
+# Comparing Case
+
+- lower case values are bigger than upper case 
+
+```
+string str1 = "Apple";
+string str2 = "Banana";
+if(str1 > str2) {
+  cout << "b is larger than A";
+}
+
+//output b is larger than A 
+```
+
+# find 
+
+- returns the position of the search item 
+
+```
+string str = "Mississippi";
+int pos = str.find("iss");
+cout << pos << endl; 
+
+//output 1 
+
+```
+
+- suppose you wanted to find the next 'iss' in mississippi
+
+``````
+string str = "Mississippi";
+int pos = str.find("iss");
+pos = str.find("iss", pos + 1);
+cout << pos << endl; 
+
+//output 5 
+``````
+
+start search at 2..and find 'iss' at character 5 
+
+# find 
+
+- no position string::npos
+- want to see if something is not found; 
+
+in example, looking for x in mississippi 
+
+```
+string str = "Mississippi";
+int pos = str.find("x");
+if(pos == string::npos){
+  cout << "x not found"; 
+}
+
+//output x not found
+```
+
+# substring
+
+- returns a portion of the string to the end of the string
+- allow you to limit the size of your string
+
+```
+string str = "Weber state";
+int space1 = str.find(" ");
+string school = str.substr(space1);
+cout << school; 
+
+//output State
+
+```
+so gives the portion of the string specified, starting at whatever pos is passed in
+
+- if given 2 positions (0, space) it will give a start and an ending, not inclusive 
+
+# iterating over strings
+
+- iterate over the characters of a string
+
+```
+for(int i = 0; i < str.length(); i++) {
+  cout << str.at(i)<< endl; 
+  cout << str[i] << endl; 
+}
+
+```
+
+# iterating: At vs []
+
+- At - preferred if wanting read-only
+``````
+string str = "abc";
+cout << str.at(99);
+``````
+- will result in an error
+
+VS.
+
+operator[]
+
+```
+string str = "abc"; 
+cout << str[99]; 
+
+
+```
+
+- this is allowed but will display random junk; whatever is at the position 
+
+
 
