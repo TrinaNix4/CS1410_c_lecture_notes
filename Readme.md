@@ -2027,3 +2027,71 @@ while(sout >> temp) {
 
 ```
 
+# File I/O
+
+#include <fstream>
+
+3 classes 
+* fstream: input/output
+* ifstream: input
+* ofstream: output 
+
+# File types 
+
+- can write to Text files 
+* open with text editor
+* .txt .csv, .cpp, .java, .html, and more
+
+- or can write to Binary  files 
+* everything else 
+* opened with specialized programs
+* .exe, .png, .zip, .mp3
+
+# file access
+
+- random access; 
+
+- sequential access;
+
+- random access file analogy
+
+  - tennis box full of balls; can reach in and grab any ball
+
+  vs.
+   - sequential access analogy 
+    - 3 tennis balls in tube and to access the one at the bottom, you must remove the balls above it
+
+    # writing to a file 
+
+    - #include<fstream>
+
+    ifstream: reading in from a file
+
+    ofstream: writing out to a file 
+
+    # file output with standard dictionary
+
+    to write to it, you need to open it
+    
+    - if using namespace std;
+    OR
+    - using std::ofstream;
+      using std::out;  
+
+    ```
+    ofstream fout; 
+    fout.open("hello.txt", ios::out);
+    
+    ```
+
+# file output inline 
+
+- if not using namespace std; 
+- maybe in a .h file
+
+```
+std::ofstream fout;
+fout.open("hello.txt", std::ios::out); 
+
+```
+
