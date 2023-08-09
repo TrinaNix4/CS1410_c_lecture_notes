@@ -2095,3 +2095,16 @@ fout.open("hello.txt", std::ios::out);
 
 ```
 
+- many compilers create the file in the same directory
+
+- CLion, however, creates it in the cmake-build-debug folder so you must go up a directory using 
+  *  ../
+
+  ```
+  ofstream fout;
+  fout.open("../hello.txt", ios::out);
+
+  
+  ```
+
+  
