@@ -2107,4 +2107,36 @@ fout.open("hello.txt", std::ios::out);
   
   ```
 
-  
+  # file output
+
+  - in CLion using projects with test cases it's even 1 folder deeper so use:
+    * ../../hello.txt
+
+    # file output 
+
+    - declare and open file in same line of code
+    ```
+    ofstream fout("hello.txt", ios::out);
+    
+    ```
+
+    - writing to the file is just like a cout statement, but we use the name of our stream (fout)
+
+    ```
+    ofstream fout;
+
+    //opens the file
+    fout.open("../hello.txt", ios::out);
+//writes hello world to the file
+    fout << "Hello World";
+//closes the file 
+    fout.close(); 
+    
+    ```
+
+* the ios::out says to write to the file and overwrite whatever is there; what was previously there will be deleted and replaced 
+
+* this can be changed by ios::app
+ - it will add it to the end instead of deleting what is there
+
+ - append a file: just add to the file instead of overwrite it
