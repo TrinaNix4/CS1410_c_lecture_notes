@@ -2140,3 +2140,131 @@ fout.open("hello.txt", std::ios::out);
  - it will add it to the end instead of deleting what is there
 
  - append a file: just add to the file instead of overwrite it
+
+ # open a file for reading
+
+ - ifstream: reads from a file 
+
+ifstream fin("numbers.txt", ios::in); 
+
+in CLion:
+
+ifstream fin("../numbers.txt", ios::in); 
+
+ if not in main:
+
+ std::ifstream fin("numbers.txt", std::ios::in); 
+
+ # checking that a file opened
+
+ .good() determines if it's a valid stream
+
+ - before we can read from it, need to make sure the file exists
+
+ ```
+ ifstream fin("numbers.txt", ios::in);
+ if(!fin.good()){
+  cout << "could not find the file";
+  return 0; 
+ }
+ 
+ ```
+
+# Reading word from a file 
+
+- read using the >> operator 
+
+- like  a cin statemen (fin)
+
+
+
+```
+ifstream fin("numbers.txt", ios::in);
+if(!fin.good()){
+  cout << "could not find file" ; 
+  return 0; 
+}
+string word;
+
+//reads whatever's in the file, then stores it to variable called word
+fin >> word; 
+ fin.close();
+
+
+```
+
+# reading line from a file:  <<
+
+- read using the >> operator 
+
+* >> reads up to a space so to read a whole line, we use getline()
+``````
+ifstream fin("numbers.txt", ios::in);
+if(!fin.good()){
+  cout << "could not find file" ; 
+  return 0; 
+}
+string line;
+getline(fin, line);
+
+fin.close()
+``````
+
+# reading until eof()
+
+- eof() finds the end of the file 
+
+
+
+```
+string word;
+//as long as it's not the end of the file
+while(!fin.eof()){
+  //its gonna read in the word and print it out to the screen 
+  fin >> word;
+  cout >> word >> endl; 
+}
+
+fin.close(); 
+
+```
+
+# Reading line from a file: getline()
+
+- getline returns false if nothing is read 
+
+- eof() finds the end of the file 
+
+```
+string line; 
+//as long as i'm reading information from the getline(), print it out
+while(getline(fin, line)) {
+  cout << line << endl; 
+}
+
+fin.close(); 
+
+```
+# reading: Mac vs PC
+
+* add a specification on what characters you will ignore 
+``````
+string line;
+
+int number;
+
+while(getline(fin, line)) {
+  //on mac, if you find a /r in your ine because ignore character is not reading in /r, then just erase that last character
+      if(line.find('\r') != line.npos)
+        line.erase(line.size() -1);
+      fin >> number; 
+
+  //on pc, ignore 2 characters all the way up to the \n
+      fin.ignore(2, '\n');
+
+  cout << line << endl;
+  cout << number << endl; 
+}
+
+``````
+
