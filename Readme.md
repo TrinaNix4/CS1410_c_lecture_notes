@@ -2268,3 +2268,100 @@ while(getline(fin, line)) {
 
 ``````
 
+# Arrays 
+
+# static arrays
+
+- why an array?
+
+- collection of items
+- same data type
+- same name 
+
+string person1;
+string person2;
+string person3;
+
+# declare an array
+
+```
+int oddNumbers [100];
+double grades[10];
+string tweets[200]; 
+
+```
+
+# initializer list 
+
+- declare an array with values defined 
+
+```
+string students[4] = {"Jenny", "Joe", "Paul", "Fred"};
+
+int primes[4] = {2, 3, 5, 7};
+
+//set or change position 0 of primes to 4
+primes[0] = 4; 
+
+//allow the user to enter in the value for primes position 2
+cin >> primes[1];
+
+```
+
+# iterating over array elements
+
+- use a loop to iterate over the elements of an array 
+``````
+const int DAYS = 7; 
+string days[DAYS] = {"sun", "mon", "tue", "wed", "thu", "fri", "sat"}
+
+for(int i = 0; i < DAYS; i++){
+  cout <<"Day: " << days[i] << endl; 
+  }
+``````
+
+
+# finding size 
+
+- use sizeof function to find the size of the array
+
+```
+string days[] = {"sun", "mon", "tue", "wed", "thu", "fri", "sat"};
+
+int size = sizeof(days) / sizeof(string);
+for(int i = 0; i < size; i++) {
+  cout << "Day: " << days[i] << endl; 
+}
+
+```
+
+# iterating using a range for loop
+
+- use a loop to iterate over the elements of an array 
+``````
+const in DAYS = 7;
+string days[DAYS] = {"sun", "mon", "tue", "wed", "thu", "fri", "sat"};
+
+for(string i: days){
+  cout << "Day: " << i << endl; 
+}
+``````
+ - i becomes the string itself.  
+
+- but you cannot modify i. it's just a copy of the value from the list; 
+
+- if we want to modify it... we can use 
+
+```
+for(auto &&i: days)
+  i = "holiday"; 
+
+```
+- && make i the actual address of where the info is stored in the list 
+
+- so above code would change all of sun mon tues wed, etc  to holiday. 
+
+# passing array to functions
+
+
+
