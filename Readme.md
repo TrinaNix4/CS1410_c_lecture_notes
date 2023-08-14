@@ -2362,6 +2362,78 @@ for(auto &&i: days)
 - so above code would change all of sun mon tues wed, etc  to holiday. 
 
 # passing array to functions
+- when you pass an array to a function, you're actually passing the memory location of where it is stored
+
+```
+#include <iostream>
+
+using namespace std;
+
+//passing an array num to a function change
+void change(int num[]){
+  num[0] = 42; 
+}
+
+int main() {
+  cout << "Array Practice!\n";
+  int num[] = {1, 2, 3, 4};
+  cout << "Position 1 Before change() " num[0] << endl; 
+  change(num);
+  cout << "position 1 after change() " << num [0] << endl; 
+}
+
+```
+* it doesn't make a copy. it actually passes the data itself so any change made in a function will be changed back in main, as well. 
+
+* it retains the changes from the function
+
+# Array of objects
+
+- array may contain more than primitive data
+
+- each position in array contains both x and y
 
 
+```
+Point triange[] = {
+  Point(1,1),
+  Point(5, 1),
+  Point(3, 4) 
+};
+
+
+
+```
+
+* must have default constructor  
+- it will assume all th values in triangle are empty until i've specified an amount 
+
+```
+Point triangle[3];
+triangle[0] = Point[1, 3];
+
+```
+
+
+```
+class Point 
+{
+  public: 
+  Point () : x(0), y(0) {}
+  Point(int x, int y) : x(x), y(y) {}
+  int GetX() {return x;}
+  int GetY() {return y; }
+
+private:
+int x, y;
+
+
+};
+
+```
+
+# access methods
+
+cout << triangle[0].GetX(); 
+cout << triangle[1].GetY(); 
 
