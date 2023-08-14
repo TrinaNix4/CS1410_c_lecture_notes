@@ -2437,3 +2437,73 @@ int x, y;
 cout << triangle[0].GetX(); 
 cout << triangle[1].GetY(); 
 
+# Array of struct
+
+- array may contain more than primitive data
+- each position in array contains both x and y 
+
+```
+struct Point
+{
+  int x, y; 
+}
+
+Point triangle[]  = {{1,1}, {5, 1}, {3,4}}
+
+```
+
+- has no problem defining an array 
+
+Point triangle[3];
+triangle[0] = {1, 3};
+
+# access methods
+- easy to use because don't have to spend the time to code entire class
+- instead of using Get() can use dot operator
+
+```
+cout << triangle[0].x; 
+cout << triangle[1].x; 
+
+```
+
+# 2-D array
+
+- a table with rows and columns
+usu. row first, column second
+
+# 2d array initialization
+
+int numbers[3][4]= {
+  {11, 13, 9, 12}, 
+  {3, 5, 21, 10}, 
+  {17, 15, 32 ,4}
+}; 
+
+# iterating over a 2d array
+
+- need to use 2 loops: 
+
+char tactoe[ROWS][COLS] = {
+  {'X', ' ', 'O'},
+   {'O', 'O', 'X'},
+    {' ', 'X', ' '}
+}
+
+for(int r = 0; r < ROWS; r++) {
+  for(int c=0; c < COLS; c++) {
+    cout << tactoe[r][c] << "|"; 
+  }
+
+  cout << endl << " ______________" << endl;
+}
+
+# multiple dimensions
+
+- you can have more than 2 dimensions in an array
+
+int cube [3][3][3];
+
+cube[0][1][2] = 5;
+cout << cube[0][1][2] << endl; 
+
