@@ -2507,3 +2507,493 @@ int cube [3][3][3];
 cube[0][1][2] = 5;
 cout << cube[0][1][2] << endl; 
 
+# Containers
+
+
+
+
+
+# Standard Template Library
+
+
+
+containers: stores a collection of other objects
+Algorithms: collection of functions
+Integrators and lambdas: allows you to specify the data in your algorithm 
+# array
+
+
+
+array
+Vector
+Set
+Map
+Stack
+Queue
+
+
+different ways of storing data
+
+
+# std::Array
+
+
+
+fixed size list of any value 
+
+
+Declaration
+```
+
+#include<array>
+
+Array<data_type,  array_size> array_name;
+
+
+
+```
+
+
+
+Example
+
+
+
+```
+
+Array<string, 200>names; 
+
+
+
+```
+
+
+
+# Array: Instantiating
+
+
+
+Iterate through and set each item: 
+
+
+
+```
+
+Array<int, 5>myList; 
+
+
+
+	For(int i = 0; i < 5; I++) {
+
+			MyArray[i] = i; }
+
+```
+
+OR -
+//Initializer list
+Array<int, 5>myList = {5, 2, 1, 3, 4}
+
+
+# Array: iterating by index 
+
+
+
+Size: size() determines the number of elements 
+
+
+
+# Access each element
+
+	* operator[] access each element 
+
+	* .at() function 
+
+
+
+```
+
+For(int i = 0; i < myArray.size(); i++){
+
+	Count << myArray.at(i) << “ “; 
+
+}
+
+
+
+```
+
+
+
+# Array: iterating entire array 
+
+
+
+iterates the entire list 
+i becomes a copy of each element 
+
+
+
+
+
+
+Array<int, 5>myArray = {5, 4, 3, 2, 1};
+
+For(auto i : myArray){
+
+
+
+}
+
+
+
+i. Cannot be modified. It’s just a copy of the data; but if a double reference is added, then the data can be modified 
+		
+
+
+
+
+
+Array<int, 5>myArray = {5, 4, 3, 2, 1};
+
+For(auto &&i : myArray){
+
+	Cout << i << “ “; 
+
+		i++
+
+}
+
+
+
+Values would be 6, 5, 4, 3, 2 
+
+
+
+
+
+# std::Array iterator
+
+
+
+
+
+begin() returns the start
+
+end() returns the end
+
+Pointer to accesss location
+
+
+
+
+
+
+
+For (auto it = lst.begin(); it != lst.end(); ++it) {
+
+	Cout << *it << “ “; 
+
+}
+
+
+
+
+
+
+
+lst.begin
+Iterate through through until we hit the end
+
+
+Pointer means i have the address location. The * means shows me the data instead of the address location 
+
+
+
+# Vector
+
+
+
+Similar to an array; with exception - size
+
+
+
+It’s a resizeable array
+
+
+
+
+
+#include <vector>
+
+
+
+Void push_back(toAdd)
+
+Begin() returns a pointer to the start
+
+End() returns a pointer to the end 
+
+Size() returns number of elements
+
+Overloaded [] to access each element 
+
+At() 
+
+
+
+# vector: instantiating
+
+
+
+Vector<int>myList; don’t have to specify the size 
+
+
+
+//initial size of the list is 100
+
+Vector<int>myVector(100); 
+
+
+
+# Vector: Adding
+
+
+
+adds an item to the end of the list 
+Void push_back(item)
+
+
+
+
+
+
+For(int i = 0; i < 5; i++) {
+
+	MyVector.push_back(i);
+
+}
+
+Creating a loop that goes from 0 to 4 and pushing the items on the back of list, so list will be 0 1 2 3 4 
+
+List is sized accordingly. 
+
+#Vector: Iterating 
+
+.size() determines the number of elements 
+
+Operator[] access each element
+
+.at() access the element at that position
+
+
+
+
+For(int i = 0; i < myList.size(); i++){
+
+	Cout << myVector.at(i) << “ “; 
+
+}
+
+
+
+
+
+
+Above way is iterating by index value
+
+
+
+Another way is to iterate the entire array
+
+
+
+
+
+For(auto &&i : myList){
+
+	Cout << i << “ “; 
+
+}
+
+
+The ampersands will change the particular value in the list; without them will not change 
+
+
+
+# Vector: using auto
+
+
+
+Use an iterator. It is a pointer to the value
+
+
+
+For(auto i = myList.begin(); i != myList.end(); i++) {
+
+Cout << *(i) << “ “; 
+
+
+
+So this is another way of iterating through except now we have a pointer to the memory address instead of getting just the data; 
+
+
+
+The * specifies that we want to view that data at the memory address instead of just the memory address being displayed
+
+
+
+# Vector advantages and disadvantages compared to arrays
+
+
+
+Advantages - 
+
+direct access to data
+- memory management is done for you
+Disadvantages 
+
+add to end less efficient if always adding values
+Extra memory allocated for list items not in list 
+
+
+
+
+# Set 
+
+
+
+resizable container 
+- must contain unique values
+Cannot access individual elements
+
+
+#include<set>
+
+Void insert(toAdd)
+
+
+
+begin() returns pointer to the start
+
+end() returns pointer to the end
+
+size() return number of elements 
+
+
+
+
+
+# set: instantiate
+
+
+
+Set<int>myList;
+
+
+
+//size of the list is 3
+
+Set<int>myList = {1, 2, 2, 3, 4};
+
+
+
+# set: adding 
+
+
+
+adds an item to the set
+Void insert(item)
+Duplicate items will not be added
+
+
+
+
+For(int i = 0; i <5; i++) {
+
+	MyVector.insert(i); 
+
+}
+
+
+
+# iterate through a set: for each loop
+
+
+iterates the entire set 
+
+
+For(auto i : myList) {
+
+	Cout << i << “ “; 
+
+}
+
+
+
+This will iterate from beginning to end and print out each of the items in the list 
+
+
+
+# set: using iterator 
+
+
+
+use an iterator. It’s a pointer to the value
+
+
+For(auto i = myList.begin(); i != myList.end(); i++) {
+
+		Cout << *(i) << “ “; 
+
+}
+
+
+
+# other containers
+
+
+
+# stack 
+
+last in first out (LIFO)
+Like a stack of trays 
+No access to middle or end values 
+
+
+
+
+
+
+stack data structures are useful when the order is important. They ensure that a system does not move onto a new action before completing those before 
+Example: undo option 
+
+
+
+# stack 
+
+
+
+#include<stack>
+
+
+
+Stack<int>myStack;
+
+
+
+Std::stack<string> strStack;
+
+
+
+
+
+Void push(toAdd) adds to the top
+
+Pop() deletes the top
+
+Empty() returns true if the stack is empty
+
+Size() return number of elements
+
+Top() returns the top value 
+
