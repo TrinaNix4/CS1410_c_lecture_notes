@@ -2833,3 +2833,20 @@ std::stack<string> strStack;
 - size() return number of elements
 - top() returns the top value 
 
+```
+stack<int>myList;
+myList.push(10);
+
+```
+put '10' onto my stack. will be the item at the top of the stack 
+
+```
+myList.push(42);
+myList.push(4);
+
+myList.top();
+// output: 4
+
+```
+result:   (4, 42, 10) each new push is on the top of the stack 
+
