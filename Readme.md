@@ -2850,3 +2850,41 @@ myList.top();
 ```
 result:   (4, 42, 10) each new push is on the top of the stack 
 
+# queue 
+
+First in First Out - waiting in line at disneyland
+
+- no access to middle values 
+- every time we add we add to the end of the line; every time we remove we remove from the front of the line
+
+#include <queue>
+
+# queue usage 
+
+when to use a queue?  when the order of actions is important. 
+
+it ensures that actions are performed in order
+
+* example : printer queue
+
+5 people want to print an item; 
+whoever prints first gets stored into the queue;
+then the next person. when printer is handling jobs, it starts with the first inthe queue
+
+
+# queue
+
+#include<queue>
+
+queue<int>myQueue;
+std::queue<double>dblQueue; 
+
+- void push(toAdd) adds to the back
+- npop() deletes from the front
+- empty() returns true if the stack is empty
+- size() return number of elements 
+- front(), back(), returns the front/back value
+
+
+
+
