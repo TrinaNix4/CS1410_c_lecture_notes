@@ -2886,5 +2886,167 @@ std::queue<double>dblQueue;
 - front(), back(), returns the front/back value
 
 
+# Map - data structure
+
+
+- key/value pairs
+- same as dictionary in python
+- search for item by the key
+
+#include<map>
+
+- void insert({key, value})
+- erase() removes by key
+- empty() returns true if the map is empty
+- size() return number of elements
+[key] :Key returns the value 
+
+
+example: insert using key value pairs
+``````
+map<string, int>myMap;
+myMap.insert({"Weber State", 21});
+myMap.insert({"Utah State", 37});
+myMap.insert({"BYU", 14});
+
+``````
+
+
+# map access by key 
+map<string, int>myMap;
+myMap.insert({"Weber State", 21});
+myMap.insert({"Utah State", 37});
+myMap.insert({"BYU", 14});
+
+cout << myMap["Weber State"];  //21
+myMap.erase("Utah State"); //takes out utah state from list 
+
+
+# iterate
+
+- first is the key
+- second is the value 
+``````
+for(auto i : myMap) {
+  cout << i.first << " " << i.second << endl;
+}
+``````
+# modify values 
+
+- may modify value
+- cannot modify key
+
+```
+for(auto &&i : myMap) {
+  i.second ++; 
+}
+
+```
+
+# what are iterators
+
+- pointers to the container
+- used with algorithms 
+  - .begin() gives beginnign of list
+  - .end() gives end of list
+
+- access the ends of the list 
+
+```
+
+array<int, 4> myArr = {2, 4, 6, 8};
+
+cout << *myArr.begin();
+cout << *myArr.end();
+
+```
+
+*   star means it's going to reference the data int he pointer, not that it's accessing the pointer itself
+
+# what are iterators
+
+- can iterate with iterators
+
+array<int, 5> myArr = {5, 2, 1, 7, 9};
+
+for(auto i = myArr.begin(); i != myArr.end(); ++i) {
+  cout << *i << " "; 
+}
+
+- iterator needs to be ++i, not i++
+
+# used with algorithms 
+
+sort(myArr.begin(), myArr.end());
+
+sort entire array from beginnning to end
+
+# algorithms
+
+- count
+- count_if
+- find
+- find_if
+- sort 
+- min
+- max
+
+
+# sort 
+
+- used with algorithms
+
+```
+array<int, 4> myArr = {5, 4, 2, 9, 1}
+sort(myArr.begin(), myArr.end());
+1, 2, 4, 5,9
+
+```
+
+# sort descending
+
+sort(myArr.begin(), myArr.end(), greater<>());
+
+9 5 4 2 1 
+
+# count
+
+- finds the number of elements in a list 
+
+array<int, 10> myArr = {2, 2, 2, 2, 4, 6, 8, 10, 6, 2}
+
+int cnt = count(myArr.begin(), myArr.end(), 2); 
+cout << cnt << endl; 
+
+//output: 5 
+
+# find 
+
+- finds the position of the item in the list 
+
+- this is a pointer, not the value
+- will retrieve a pointer to wherever teh item is in the list
+
+array<int, 10> myArr = {2, 4, 6, 2, 4, 6, 8, 10, 6, 2};
+auto it = find{myArr.begin(), myArr.end(), 4};
+if(it == myArr.end()){
+
+  cout<< "Item not found"; 
+}else
+{
+  cout << *it << "is found in the list"; 
+}
+
+//output: 4 is found in the list 
+
+# Max 
+
+- finds the largest element: max_element()
+- finds the smallest element: min_element()
+
+array<int, 10> myArr = {2, 4, 6, 2, 4, 6, 8, 10, 6, 2};
+auto mx = max_element(myArr.begin(), myArr.end()); 
+cout << *mx << endl;
+(it's a pointer to the object, not the object itself so the * is used to get the data )
 
 
