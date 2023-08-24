@@ -3108,3 +3108,67 @@ will count how many are divisble by 5;
 
 * lambda is a function that's used like a variable.  in the count_if the lambda is used in palce of the variable  
 
+# count_if 
+
+- count of cars from 2020 
+
+```
+struct Car {
+
+  string make;
+  string model; 
+  int year; 
+  string vin; 
+
+}
+
+vector<Car> cars = {
+  {"Honda", "Accord", 2020, "4YLJ44837838"},
+  {"Toyota", "Camry", 2020, "4YLJ44837838"},
+  {"Mazda", "Miata", 2016, "4YLJ44837838"};
+
+};
+
+int year = 2020; 
+int cnt = count_if(cars.begin(), cars.end(), [year](const Car &c) {return c.year == year;});
+cout << cnt << endl; 
+
+```
+
+* year is the variable to send to lambda, put in capture clause 
+
+so as long as c.year is equal to the year we are looking for (2020), then it counts it using count_if 
+
+output: 2
+
+# sort with lambda
+
+```
+struct Car {
+
+  string make;
+  string model; 
+  int year; 
+  string vin; 
+
+}
+
+vector<Car> cars = {
+  {"Honda", "Accord", 2020, "4YLJ44837838"},
+  {"Toyota", "Camry", 2020, "4YLJ44837838"},
+  {"Mazda", "Miata", 2016, "4YLJ44837838"};
+
+};
+
+ 
+sort(cars.begin(), cars.end(), [](const Car &a, const Car &b) {return a.year < b.year;});
+cout << cnt << endl; 
+
+```
+
+- sorting the items, need to compare each item to each other
+
+- use 2 instances of the car, a and b.  
+
+- sorting by year .. a.year < b.year ...smallest to largest by year
+
