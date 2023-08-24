@@ -3050,3 +3050,61 @@ cout << *mx << endl;
 (it's a pointer to the object, not the object itself so the * is used to get the data )
 
 
+# Lambda
+
+- variable that acts like a function
+- short snippets of code
+- not reuseable
+- usually used in an algorithm 
+
+# lambda format
+
+- format for a lambda: variables to use in the function
+
+* capture clause: variables that are to be copied inside the lambda function
+* parameters: argument to be passed to the lambda at execution time
+* definition: defines the lambda function
+
+[ capture variables ] (parameters) {
+  Definition
+}
+
+
+auto divisible = [] (int num) { return num % 2 == 0; };
+
+if(divisible(4) ) {
+  cout << "True";
+}
+
+- suppose we don't care if it's even or odd, we just want to see if it's divisible by a particular value...
+
+int value;
+cin >> value; 
+auto divisible = [value] (int num) {return num % value == 0;};
+
+if (divisible(4)){
+  cout << "True"; 
+
+}
+
+- capture clasues is used to capture variables; 
+
+send the 'value' as the capture clause so it can be used in the definition
+
+it captures the variable and allows us to use it in our defintion
+
+```
+array<int, 20> values = { 90, 99, 70, 2, 19, 37, 65, 84, 2, 21}; 
+
+int divisible = 5; 
+int cnt = count_if(values.begin(), values.end(), [divisible](int num){return num % divisible == 0;})
+
+- want to see how many of the values in the array are divisible by 5; 
+send divisible variable in by capture clause, int num will represent each of the items, one at a time 
+
+will count how many are divisble by 5; 
+
+```
+
+* lambda is a function that's used like a variable.  in the count_if the lambda is used in palce of the variable  
+
