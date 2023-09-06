@@ -3172,3 +3172,110 @@ cout << cnt << endl;
 
 - sorting by year .. a.year < b.year ...smallest to largest by year
 
+
+
+# Pointers
+
+- what are pointers
+
+- variable that holds the memory address of another variable
+
+- this allows us to have dynamic memory (static memory up until now)
+
+
+# what is a variable? 
+
+* name 
+* address or location in memory (0xfc2001)
+* content 
+
+int num = 10;       => num    0xfc2001 |  10 
+
+- the type of data allocates the number of bytes
+
+int is 4 bytes vs dbl. is 8 bytes... etc
+
+# Address-Of Operator (&)
+
+- Address-Of Operator gives the address; shows us where variable is stored
+
+int num = 10
+double num2 = 15.7;
+cout << &num; 
+cout << &num2; 
+
+will be different every time program is ran because won't be stored in same location every time
+
+
+# Dereference Operator (*)
+
+- Pointers are variables with a value of a memory address
+  - isntead of having a value (like 15.8), instead, it has a memory address of where the data is actually stored
+
+- points to first byte
+
+- asterisk defines it as pointer
+
+``````
+int num = 10; 
+double num2 = 15.7; 
+
+int *iPtr;
+double *dPtr; 
+
+iPtr = &num1;
+dPtr = &num2; 
+-----------------------------
+output:   num1 is 10;   num2 is 15.7
+iPtr is 0xfc2001;   dPtr is 0xfc2005
+
+``````
+
+- two purposes of * 
+
+* declares a pointer - put a * in front of a variable and it's now a pointer
+* dereferences a pointer - 
+
+so a cout statement for the pointer as follows: 
+
+cout << iPtr
+cout << dPtr
+
+will gives the addresses for the pointers - 0xfc2001 and 0xfc2005
+but if i do: 
+cout << *iPtr; 
+cout << *dPtr;
+
+it dereferences the pointer and prints out the value of whats' stored at that location
+
+will give - 10 and 15.7
+
+# Variables and Pointers 
+
+* has a
+* name
+* address or location in memory
+* content
+
+int num;        num => 0xfc2001 | (no value given)
+int *ptr;      ptr =>   0xfc2015
+
+difference is if i set my num = 123
+
+then:    num =>  0xfc2001 |  123
+
+
+and with the pointer - if i set ptr = &num; 
+set it to have the address of num
+ then we get :     ptr => 0xfc2015 |  0xfc2001 (the address of num)
+
+
+so a pointer points to a memory location, but it also has a memory location of where it exists
+ cout << *ptr;  will output   123 (it's dereferenced and gives the value)
+
+
+ # Memory Management 
+ 
+
+
+
