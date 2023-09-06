@@ -3276,6 +3276,244 @@ so a pointer points to a memory location, but it also has a memory location of w
 
  # Memory Management 
  
+2 places data gets stored: 
+
+- stack memory - stores temporary data; stores variables; super efficient because of stack structure
+- heap - allows you to dynamically allocate data;  the data persists throughout your program; 
+
+# Stack
+
+- stack segment is where memory is allocated for local variables within functions. 
+- such memory is claimed back when the function returns
+- needs to know exactly the size of the data in order to store it on the stack
+
+# heap
+
+- provides more stable storage of global data;  memory allocated in the heap remains in existence for the duraction of the program or untnil the program releases it  
+
+- disadvantage  doesn't automaticlly deallocate memory like the stack does;  you have to specifically instruct it to do so
+
+
+pros and cons
+
+- stack pros
+* automatica memory management: 
+* don't need to worry about memory management and cleaning up after functions, local variables
+- stack cons
+ * static allocation of memory; need to know ahead of runtime how big your data is, how much memory is needed
+
+
+- heap variabels  - the 'new' operator is used to request blocks of heap memory
+
+* pros - dynamic allocation of memory:
+  - you don't need to know the size of the memory you are requesting before runtime
+
+  * cons - manual memory management: 
+  you have to remember to use the delete operator to release memory
+
+
+  # stack : declare variables
+
+  - declaring variables reserves the space 
+
+  * int = 4 bytes
+  * float = 4 bytes 
+  * double = 8 bytes
+   etc etc
+will reserves the size for whatever type is declared
+
+
+# New Keyword - heap data
+
+- new keyword: creates object and allocates space 
+
+int* x = new int; stored on heap
+double* y = new double(8.6); stored on the heap. 
+
+* they are pointers because need a pointer to use 'new' operator
+
+Date* dt = new Date("01/01/2024")
+
+// new specifies that all variables will be stored on the heap 
+
+# nullptr Keyword
+
+- nullptr means that the pointer does not have memory allocated on the queue
+
+- when you use the new keyword, you do not need to re-declare the variable 
+
+- suppose we don't know how much memmory we want to allocate, can specify nullptr which means it has no value, not pointing to any data, just go ahead and allocate some space 
+
+```
+int* x = nullptr;
+double* y = nullptr; 
+
+Date* dt = nullptr; 
+
+- the above code just declares the variable, initializes it to null, no value; later on, don't have to redclare it. can just call: 
+
+x = new int; 
+y = new double(8.6)
+
+
+dt = new Date ("01/01/2023")
+```
+- when the new keyword is used, you dont need to re-declare the variable 
+
+# delete keyword
+
+- new keyword: creates object and allocates space 
+
+- call to new requires call to delete
+
+```
+int* x = new int; 
+double* y = new double(8.6); 
+
+Date* dt = new Date("1/1/2023"); 
+
+delete x; 
+delete y;
+delete dt; 
+
+x = nullptr
+y = nullptr;
+dt = nullptr
+
+* setting it equal to nullptr is when you're specifying it has no value anymore
+
+
+```
+
+- if a pointer does not have memory allocated, you may set it equal to nullptr
+
+- no value for pointer
+
+- just because it is deleted, all that does is deallocate the memory, it doesn't necessarily erase the memory, it's still there. 
+- it's not actually deleted
+
+# pointers and arrays
+
+- a fixed size array is a pointer (we know it's a fixed size because it doesn't use the 'new' operator)
+``````
+int primes[] = {2, 3, 4, 5, 7};
+for(int i = 0; i < 4; i++>){
+  cout << *(primes + 1)>>  //this is dereferencing a pointer
+}
+
+//* primes is a pointer to wherever 2 is stored in memory; can access the next value by using primes[i]; 
+//
+``````
+this is stored on stack, not heap. it's fixed size; no 'new' keyword being used
+
+# pointer array
+
+can do the same as above with a pointer array; but don't have to specify the size when it's instantiated
+
+* dynamic sized pointer
+* heap variables: uses 'new' keyword
+
+```
+int *primes = new int[user_defined_size]; 
+for(int i = 0; i < user_defined_size; i++>){
+
+  primes[i] = i * 10; 
+
+}
+ 
+
+ delete [] primes; // must call delete or memory is not deallocated
+```
+
+
+# can also reallocate data
+
+* pointer can be reused
+* must reallocate data with new keyword
+* loses original data
+* must call delete again 
+
+```
+
+int *primes = new int[user_defined_size]; 
+for(int i = 0; i < user_defined_size; i++>){
+
+  primes[i] = i * 10; 
+
+}
+ 
+
+ delete [] primes;
+
+ primes = new int[1000];
+ ...//do stuff
+ delete [] primes; 
+
+
+```
+
+# Pointers to objects
+
+* dynamic memory for objects; if i want to allocate dynamic memory for the Time struct, 
+use:
+
+Time *t = new Time; 
+- this will allocate memory on the heap, for all variables we need.
+struct Time {
+  int hours;
+  int minutes;
+  int seconds;
+}
+
+
+# dereferencing the values  
+
+- can use the * to dereference the object 
+
+- parenthesis needed to specify the object 
+
+Time *t = new Time; 
+(*t).hours = 11;
+(*t).minutes = 45;
+(*t).seconds = 17;
+
+can also use an arrow operator
+
+# arrow operator
+
+- class member access operator 
+- used with a pointer 
+
+Time *t = new Time; 
+t->hours = 11;
+t->minutes = 45;
+t->seconds = 17;
+
+
+this says, my object 't' that points to wherever the location the data the is stored, what is inside the objects is this hours, minutes, seconds.  so can set these variables using the arrow operator
+
+can't use dot oeprator because t is not a variable, it's a pointer to where the data is stored
+
+so t's hours are 11.  etc 
+
+# delete operator
+
+- new operator allocates on the heap
+- delete operator removes from the heap 
+
+Time *t = new Time; 
+t->hours = 11;
+t->minutes = 45;
+t->seconds = 17;
+delete t; 
+
+
+
+
+
+
+
+
 
 
 
