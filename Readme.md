@@ -3507,13 +3507,198 @@ t->minutes = 45;
 t->seconds = 17;
 delete t; 
 
+# Pointers to objects 
+
+```
+//given the following code: 
+
+class Time {
+  public:
+    Time(int h, int m, int s) : hours_(h), minutes_(m), second_(s) {}
+    int GetHours() {return hours_; }
+    friend ostream& operator << (ostream & out, const Time &t); 
+
+    private:
+    int hours_;
+    int minutes_;
+    int second_; 
+}; 
 
 
+```
+
+- can do the same thing with pointers to objects in classes
+
+- call the constructor: 
+
+Time *t = new Time(11.45, 17);
+cout << *t;
+
+creates the object in memory, on the heap, and have t point to wherever that object is stored in memory;
+
+if i want to call any of the functions in the class, have to use arrow operator: 
+
+Time *t = new Time(11.45, 17);
+cout << *t;
+int hours = t->GetHours(); 
+ (t is not an object, it's a pointer to an object) 
+ delete t; //besure to call delete 
+
+ *  KEY NOTE:  if it's a pointer, use an arrow instead of a dot. 
 
 
+# array of objects
 
 
+- each posiition in the array contains space for each variable
 
+gives the class: 
+
+class Point {
+  public:
+    Point(int x, int y) : x(x), y(y) {}
+    int GetX() {return x; }
+    int GetY() {return y; }
+
+    private:
+    int x, y; 
+}
+
+here is a vector of Points;  a point has an x, and y value;  
+
+if i create an array of points, and push_back 4 points; we will have:
+
+position 0 - stores X: 6
+                    Y: 2
+position 1 - stores X: 3
+                    Y: 5
+position 2 - stores X: 6
+                    Y: 7
+position 3 - stores X: 2
+                    Y: 7
+
+this is allocated space for an entire 'Point' instead of just an int, dbl, etc
+
+
+# Array of objects
+- each position in the array contains address on stack and dynamically allocated space on the heap
+if we create a vector of points: 
+vector<Point*> points; 
+
+Point* means:
+a list of values that are all stored on the heap
+
+so the address  of that value is stored in that pos in the array and this is smaller than storing the value, it just stores an address to the value; but the objec tis stored in the heap so it can dynamically 
+
+- vector itself is  not a pointer, just storing pointers that point some place on the heap
+
+
+# List of pointers vs list of objects
+
+
+* list of pointers:   vector<Point*>points; 
+  points.push_back(new Point(6, 2));
+  points.push_back(new Point(3, 5));
+  points.push_back(new Point(6, 7));
+
+   
+
+
+  * list of objects: vector<Point> points; 
+
+points.push_back(Point(6, 2))
+points.push_back(Point(3, 5))
+points.push_back(Point(6, 7))
+
+# if we want to iterate through them:  
+
+* Pointers:  
+
+vector<Point*> points;
+
+for(auto i: points){
+  cout << i->GetX()<< " " ; 
+}
+
+* list of objects:
+vector<Point> points; 
+
+for(auto i : points) {
+  cout << i.GetX() << " "; 
+}
+
+
+# deleted list of pointers vs objects
+
+
+* pointers 
+
+vector<Point*> points;
+
+for(auto i : poitns) {
+  delete i; 
+  i =  nullptr; 
+}
+
+* objects 
+
+vector<Point> points;
+
+don't have to delete
+
+
+# Destructor
+
+* special member function
+
+* destroys the class variables set by constructor
+
+* called automattically when class goes out of scope 
+
+
+# Destructor Syntax
+* same name as the class
+
+* preceded by a tilde ~ 
+
+# pointers as private variables
+
+* pointers can be private variables in a class
+
+* new operator is used to create the list 
+
+```
+
+class IntVector{
+  public:
+    IntVector() {
+        list = new int[10];
+        num_elements_ = 0; 
+    }
+
+    //whenever new is used in constructor, be sure to use delete
+    ~IntVector() {
+      delete [] list_; 
+    }
+
+    void Push_Back(int value) {
+        list_[num_elements_] = value;
+        num_elements_++;
+    }
+
+private:
+
+  int *list;
+  int num_elements_; 
+};
+
+```
+* whenever the constructro is called, it uses 'new' keyword
+* because new is used, then at some point 'delete' needs to be used - deallocated
+* want it in somehting that gets called automatically as soon as object goes out of scope
+* this can be done in the destructor
+
+* destructor's purpose: deallocation
 
 
 
