@@ -3700,5 +3700,278 @@ private:
 
 * destructor's purpose: deallocation
 
+# Deep vs Shallow copy
+
+- shallow copy 
+  - creates a copy of a pointer with the same memory address
+
+  ``` 
+  Point * p1 = new Point (4, 4);
+
+  Point *p2 = p1; 
+
+  //p1 and p2 are pointing to same address in memory
+  //cout for p1 and p2 are (4,4)
+
+  //suppose we change our p1
+
+  p1->SetX(5);
+
+  //this will also change p2 because it's pointing to the same memory location
+  
+  
+  ```
+
+  to prevent the above from being problematic, create a deep copy
+
+  # deep copy
+
+  - creates a copy of the values of the pointer in a different memory address
+
+  Point *p1 = =new Point (4, 4)
+//setting it equal to a new point with X an Y values that are the same as p1 
+  Point *p2 = new Point(p1->GetX(), p1->GetY());
+  cout << *p1;
+  cout << *p2; >>>>
+
+  //this results in the same values, but pointing to different memory addresses 
+
+  //now if i change x, i'm only changing it for p1 
+  p1->SetX(5);
+  //p2 has it's own memory location and it's values stay the same 4,4 
+
+  # Copy an object 
+
+  - a copy of an object is a shallow copy 
+
+  SpotItCard one(2);
+  SpotItCard two(1);
+
+two = one; 
+//this command creates a shallow copy so if change one
+variable, the other will change as well because it's a copy
+
+to fix this: to avoid having 2 objects that have the same data
+
+# Copy Constructor
+
+- same name as the class
+- one parameter is the object itself
+- allows you to create deep copies of class variables
+- runs when you create and assign an object 
+
+will run in two scenarios: 
+``````
+
+//i've decalred my object
+SpotItCard one(2);
+//and set it equal to another object
+SpotItCard two = one; 
+
+``````
+
+//no return type and same name as the class
+example of copy constructor
+``````
+SpotItCard::SpotItCard(const SpotItCard &c) {
+  pictures_ = new int[c.size_]; 
+  size_ = c.size_; 
+
+  for(int i = 0; i < size_; i++){
+    pictures_[i] = c.pictures_[i]; 
+  }
+}
+
+``````
+
+# operator = 
+
+similar to copy constructor but only:
+- one parameter is the obejct istelf
+- allows you to create deep copies of class variables
+- runs when you assign an object 
+
+example:
+differet from constructor copy. because it's assigning a value after it's been initialized...must do if statement where we delete anything that happens to be there
+
+SpotItCard & SpotItCard::operator=(const SpotItCard &c) {
+  if(&c != this){
+    delete []pictures_; 
+  }
+  pictures_ = new int[c.size_]; 
+  size_ = c.size_; 
+
+  for(int i = 0; i < size_; i++){
+    pictures_[i] = c.pictures_[i]; 
+  }
+}
+return *this; 
+}
 
 
+# smart pointers
+
+- a smart pointer is a wrapper class over a pointer 
+
+- takes care of memory management for the pointer
+
+- #include<memory>
+
+# types of smart pointers
+
+types of pointers
+
+* unique_ptr: only one resource pointing to memory (one pointer pointing to the location in memory, prevents other pointer objects from being set equal to it; prevents shallow copies)
+* shared_ptr: keeps track of the number of resources pointing to memory (will keep track of how many things are pointing to it, when it is zero, it automatically deletes)
+
+- differ in how they refer to the resource
+
+
+# review: syntax raw pointers
+
+Point * ptr = new Point (3, 4);
+
+same but as a unique pointer:
+
+std::unique_ptr<Point> ptr = std::make_unique<Point>(3,4);
+
+-- or --
+
+std::unique_ptr<Point> ptr (new Point(3,4)); 
+
+# syntax shared pointer
+
+std::unique_ptr<Point> ptr = std::make_shared<Point>(3,4);
+-- or --
+
+std::shared_ptr<Point> ptr (new Point(3,4));
+
+
+# smart pointer usage
+
+- usage is like raw pointers
+
+- use the arrow operator
+``````
+
+std::shared_ptr<Point> ptr (new Point(3,4));
+ptr->SetX(5); 
+
+``````
+
+
+# unique vs shared 
+
+unique:
+
+* owns the object it manages, ccannot share
+* unless you need to share ownership, this is the pointer you should use
+* cannot be copied to another pointer
+
+
+shared:
+* allows multiple smart pointers to share object
+* keeps a reference count of the object
+* increments reference count when new shared pointer is created
+* reference count decremented when shared pointer goes out of scope
+* deletes the object when the count becomes zero 
+
+# copying smart pointers
+
+- shallow copy->shared_ptr
+
+- creates a copy of a pointer with the same memory address
+``````
+
+
+shared_ptr<Point> p1 (new Point(3, 4));
+//shared so i can create a 2nd, 2 pointers referencing same location
+shared_ptr<Point>p2 = p1; 
+
+cout << *p1 << endl; 
+cout  << *p2 << endl;
+``````
+- shallow copy->unique_ptr
+
+- cannot create a shallow copy of a unique_ptr 
+
+so, this would throw an error:
+
+unique_ptr<Point> p1 (new Point(3,4));
+unique_ptr<Point> p2 = p1; 
+
+# move command
+
+can use the move command to transfer ownership of the pointer 
+
+unique_ptr<Point> p1 (new Point(3,4));
+unique_ptr<Point> p2 = move(p1); 
+
+//deallocates the space for pointer 1 and gives ownership to p2 instead.
+
+so can't do a cout for p1; it is no longer allocated
+
+# use_count()
+
+- shared pointers allow multiple pointers to access the same data  
+
+- use_count() returns the number of references 
+
+# pointer arrays 
+
+- create an array on heap using unique pointer
+
+
+``````
+//using auto cause calling make_unique; can specify an 
+//array of point, and 3 determines number of elements 
+
+auto pointerArray = make_unique<Point[]>(3);
+for(int i = 0; i < 3; i++){
+  pointerArray[i].SetX(i);
+//dot operator used because each element is not a poitner, just the array itself is a pointer
+}
+
+``````
+
+# Array of shared_ptr
+
+- create a vector of pointers
+- initialize each one 
+
+ ```
+ //thsi creates a vector of points
+ vector<std::shared_ptr<Point>>points; 
+//to add a point to the list, use push_back and make shared to initialize each of the points
+points.push_back(make_shared<Point>(2, 3));
+points.push_back(make_shared<Point>(1, 2)); 
+//can iterate through, using auto because assigning it values each point at a time, dereference because i is a pointer
+for(auto i : points){
+  cout << *i << endl; 
+}
+ 
+ ```
+
+ to iterate through a unique_ptr, 
+ cout << *points[i] << endl; 
+
+
+ # auto keyword
+
+ - lets you declare a variable and determines the type at runtime
+
+ - auto can only be used when assigned using= 
+
+ auto p = make_unique<Point>(3,4); 
+
+ as soon as program runs, type is determined 
+
+ - no equal sign, cannot use auto 
+ std::unique_ptr<Point>p1 (new Point(3, 4)); 
+
+ - equal sign, can use auto 
+
+ std::shared_ptr<Point> p1(new Point(3, 4));
+ auto p2=p1;
+
+ 
