@@ -4173,7 +4173,6 @@ when we create a function with the same name in the subclass, this will override
 
 if we have private member variables in our base classes, our subclasses do n0t have access.  but they do if we mark them as protected. 
 
-
 # Inheritance - chaining function 
 
 - Chaining function calls 
@@ -4247,4 +4246,22 @@ void Greet() {
   
   ```
 
-  
+# inheritance concepts 
+
+similarities vs differences 
+
+- all of things that are going to be shared among our classes would be best put in our base class
+  - a person has a name, a phone number 
+  vs.
+
+  subclass - different from most of the other classes 
+
+  e.g.  student classes, customer classes, lots of different type of Person
+
+  - keep in mind that the superclass is embedded into the subclass in memory
+
+
+  substitutability - should be able to be switched out and used interchangably 
+
+(as long as base class name as the type of array, an array of Person objects, it will also accept any employee object, etc)
+
