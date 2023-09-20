@@ -3990,5 +3990,40 @@ for(auto i : points){
  UML assists developers in visualizing and understanding the relationships between classes 
 
  - class attributes, methods, relationships can be represented in UML 
- 
+
+  # types of class relationships 
+
+  - composition
+  - aggregation
+  - inheritance 
+
+  # composition
+
+  = "has a" relationship - person 'has a' credit card; 
+
+  - whole/part
+
+  - tightly bound
+    - person contains instance of Credit Card
+
+  - represented in UML with a black diamond 
+
+
+# composition - in code 
+
+- simple class to hold credit card info 
+
+class Credit Card {
+  private:
+  string number_; 
+  string exp_date_;
   
+  public: 
+  CreditCard(string number, string exp_date) : number_(number), exp_date_(exp_date) {}
+
+  void Pay() {
+    cout << "Charging card..." << endl;
+  }
+}
+
+
