@@ -3974,4 +3974,21 @@ for(auto i : points){
  std::shared_ptr<Point> p1(new Point(3, 4));
  auto p2=p1;
 
+ # UML and class relationships 
+
+ UML stands for Unified Modeling language
+
+ UML is used to create diagrams that describe the structure of a program by showing the programs: 
+
+ * classes
+ * attributes
+ * operations(or methods)
+ * relationships between objects
+
+ # Class relationships 
+
+ UML assists developers in visualizing and understanding the relationships between classes 
+
+ - class attributes, methods, relationships can be represented in UML 
  
+  
