@@ -4165,7 +4165,86 @@ when we create a function with the same name in the subclass, this will override
 
 - protectected vs private
 
-- private - class members can only be accessed by the class
+- private - class members can only be accessed by the class  (can't use member variable or function in main)
 
 - protected - class members can only be accessed by the class and any subclasses 
 
+- use # in UML for protected members
+
+if we have private member variables in our base classes, our subclasses do n0t have access.  but they do if we mark them as protected. 
+
+
+# Inheritance - chaining function 
+
+- Chaining function calls 
+
+- allows for parent class to keep attributes private if necessary 
+
+- allows the child class to use the subclasses overridden methods 
+
+in the case that your member variables are private or protectec and you might still want to have access to them, 
+  
+
+  example: 
+
+  Person class: 
+
+  void Display() {
+    cout << "Name: " << name_ << endl; 
+    cout << PHOne: " << phone_ << endl; 
+  }
+
+  Employee Class 
+
+  void Display() {
+    //use scope operator to call display function within the employee class 
+    Person::Display();
+    cout << "Position: " << endl; 
+  }
+
+
+can call your member functions in your base class from your subclass by using scope operator
+
+chaining - 
+placing our display method from our person class into our display method from our employee class
+
+ # inheritance - in code
+
+
+ - Potential changes to a Superclass to allow for inheritance 
+
+ - Visibility 
+  - private variables changed to protected
+
+  ```
+  //use public keyword and name of base calss after a colon
+  class Employee : public Person {
+
+private:
+string position_;
+
+//call the general constructor of our base class in the constructor of our subclass
+
+public:  
+Employee(string name, string phone, string position) : Person(name, phone), position_(position){}
+
+
+//use the scope operator with the base class's name 
+void Display() {
+Person::Display();
+cout << "Position: " << endl; 
+
+}
+
+//use our member variable(protected) so can use it within our class 
+void Greet() {
+
+  cout << "Hello" << name_ << "!" << endl; 
+}
+
+
+  }
+  
+  ```
+
+  
