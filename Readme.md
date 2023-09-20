@@ -4041,4 +4041,51 @@ class Credit Card {
 
   - represented in UML with a white diamond 
 
-  
+  * aggregation - in code
+``````
+  class Person {
+    private: 
+    string name_;
+    //instance of apointer to a credit card
+    CreditCard * credit_card_;
+
+    public: 
+    Person(string name) : 
+    //instead of calling constructor, set credit card to null ptr 
+    credit_card_(nullptr), name_(name){}
+
+
+//destructor
+    ~Person() {
+      if(credit_card_ != nullptr)
+        delete credit_card_; 
+    }
+
+
+  }
+
+
+//creating a new object 
+void SetCard (string number, string exp_date){
+  delete credit_card_;
+  credit_card_ = new CreditCard(number, exp_date); 
+
+
+
+}
+  ``````
+
+  * instance of an Address pointer
+
+  * memory management 
+    - destructor
+    - creating a new object  
+
+- main differences between composition and aggregation: 
+
+  - in aggregation, have pointer
+while in composition we would have the actual instance of the class
+
+- comp has a black diamond pointing to the whole; the part points to the whole
+- agg has  same but with a white diamond
+
