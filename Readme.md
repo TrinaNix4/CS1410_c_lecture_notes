@@ -4027,3 +4027,18 @@ class Credit Card {
 }
 
 
+# Aggregation
+
+- "has a" relationship
+
+
+- whole/part
+
+
+- loosely bound
+  - person contains pointer to credit card
+
+
+  - represented in UML with a white diamond 
+
+  
