@@ -4089,3 +4089,83 @@ while in composition we would have the actual instance of the class
 - comp has a black diamond pointing to the whole; the part points to the whole
 - agg has  same but with a white diamond
 
+# inheritance 
+
+- "is a" relationship
+  - employee 'is a' Person
+
+
+- has a base class and a derived class 
+  - parent/child
+  - superclass/subclass
+
+
+- child class 'inherits' all the parent class's attributes and functions
+
+- represented in UML with an open white arrow 
+
+
+# inheritance implementation
+
+* required to implement inheritance
+
+- colon after class name
+- visibility
+- name of superclass
+
+
+
+
+```
+//to make person the base class to employee
+//we say public to have as much visibility into the class
+class Employee : public Person {
+
+}
+
+
+//Person Class
+public:
+Person(string name, string phone) : name_(name), phone_(phone) {}
+
+//Employee Class
+//inheritance will inherit the person class, use the person contstruct to initialize those variables
+//this will initialize our person class within our employee class
+//
+public: 
+Employee(string name, string phone, string position) : Person(name, phone), position_(position){}
+
+```
+
+
+# inheritance - overloading vs overriding
+
+- Overloading a function: 
+
+- have the same name
+- are defined in the same scope or class
+- must have unique argument lists
+- may have different return types 
+
+- Overriding a function:
+
+- have the same name
+- require classes related through inheritance
+- one function is defined in the superclass and the overriding function in a subclass
+
+- must have the same argument list and the same return type
+
+purpose of overridden function?
+
+allows us to call the same function in a subclass, with the same name as one from the superclass
+
+when we create a function with the same name in the subclass, this will override the function in the superclass 
+
+# inheritance - protected visibility
+
+- protectected vs private
+
+- private - class members can only be accessed by the class
+
+- protected - class members can only be accessed by the class and any subclasses 
+
