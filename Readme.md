@@ -4244,7 +4244,7 @@ void Greet() {
 
   }
   
-  ```
+  
 
 # inheritance concepts 
 
@@ -4264,4 +4264,81 @@ similarities vs differences
   substitutability - should be able to be switched out and used interchangably 
 
 (as long as base class name as the type of array, an array of Person objects, it will also accept any employee object, etc)
+
+# 3 pillars of object oriented programming
+
+- encapsulation - we keep our methods with our data, and we do this in classes.  we use classes and objects
+
+- inheritance - base calsses and subclasses which inherit everytbhing base class has 
+
+- polymorphism - 
+
+# what is polymorphism? 
+
+- way of choosing which function to execute during the programs runtime  
+
+# compile time binding
+
+so far we have worked with methods that the programmer chooses, function is bound during compile time to all of its calls 
+
+during the compiling process everything is linked together
+
+programmer wrote the code so that when its compiled, the functions that are used are determined by the programmer 
+
+# 5 requirements for polymorphism
+
+* inheritance 
+
+* function overriding
+
+* pointer or reference variables
+
+* upcasting
+
+* virtual functions
+
+# upcasting
+
+
+
+Person * p = new Employee(...); //upcasting an employee to a Person
+
+instantiates an Employee object but upcasts it to a Person 
+
+Assigns a child to a parent pointer 
+
+
+
+# instantiation and upcast
+
+//main method
+//employee pointer and set it equal to a new imployee object 
+Employee * e = new Employee("Sammy", "801-555-5555", "Human Resources"); 
+e->Display();
+
+//console output employee display function
+Name: Sammy
+Phone: 801-555-5555
+Position: Human Resources
+
+now if...
+upcast and did a person pointer and set it equal to anew employee...
+
+
+//main method 
+Person * p = new Employee("Joey", "801-555-3433", "Faculty"); 
+p->Display();
+
+//console output
+Name: Joey
+Phone: 801-555-3433
+
+its going to call the method from the person class rather than the employee class 
+
+because it doesn't know about the employee overridden display functin.  the pointer to person object only accounts for the sizse of a person object, so we lose access to our functions and variables in employee object
+
+why wwoud we want to do this? 
+
+
+
 
